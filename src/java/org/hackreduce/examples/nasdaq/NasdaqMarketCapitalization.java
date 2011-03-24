@@ -1,18 +1,19 @@
 package org.hackreduce.examples.nasdaq;
 
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 import org.hackreduce.mappers.NasdaqMapper;
@@ -20,42 +21,40 @@ import org.hackreduce.models.NasdaqRecord;
 
 
 /**
- * This MapReduce job will count the total number of NASDAQ records stored within the
- * files of the given input directories.
- *
- * It's meant to be an explicit example to show all the moving parts of MapReduce job.
+ * This MapReduce job will read the Nasdaq dataset and output the highest market caps
+ * obtained by each Stock symbol.
  *
  */
-public class NasdaqSymbolCounter extends Configured implements Tool {
-
-	public static final LongWritable ONE_COUNT = new LongWritable(1);
+public class NasdaqMarketCapitalization extends Configured implements Tool {
 
 	public enum Count {
 		STOCK_SYMBOLS
 	}
 
-
-	public static class NasdaqSymbolCounterMapper extends NasdaqMapper<Text, LongWritable> {
+	public static class NasdaqSymbolCounterMapper extends NasdaqMapper<Text, DoubleWritable> {
 
 		@Override
 		protected void map(NasdaqRecord record, Context context) throws IOException, InterruptedException {
-			context.write(new Text(record.getStockSymbol()), ONE_COUNT);
+			double marketCap = record.getStockPriceClose() * record.getStockVolume();
+			context.write(new Text(record.getStockSymbol()), new DoubleWritable(marketCap));
 		}
 
 	}
 
-	public static class NasdaqSymbolCounterReducer extends Reducer<Text, LongWritable, Text, LongWritable> {
+	public static class NasdaqSymbolCounterReducer extends Reducer<Text, DoubleWritable, Text, Text> {
+
+		NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.getDefault());
 
 		@Override
-		protected void reduce(Text key, Iterable<LongWritable> values, Context context) throws IOException, InterruptedException {
+		protected void reduce(Text key, Iterable<DoubleWritable> values, Context context) throws IOException, InterruptedException {
 			context.getCounter(Count.STOCK_SYMBOLS).increment(1);
 
-			long count = 0;
-			for (LongWritable value : values) {
-				count += value.get();
+			double highestCap = 0.0;
+			for (DoubleWritable value : values) {
+				highestCap = Math.max(highestCap, value.get());
 			}
 
-			context.write(key, new LongWritable(count));
+			context.write(key, new Text(currencyFormat.format(highestCap)));
 		}
 
 	}
@@ -64,11 +63,7 @@ public class NasdaqSymbolCounter extends Configured implements Tool {
 	public int run(String[] args) throws Exception {
         Configuration conf = getConf();
 
-        // Parsing Hadoop arguments
-        String[] jobArguments = new GenericOptionsParser(conf, args).getRemainingArgs();
-
-        // Anything not parsed belongs to the job itself
-        if (jobArguments.length != 2) {
+        if (args.length != 2) {
         	System.err.println("Usage: " + getClass().getName() + " <input> <output>");
         	System.exit(2);
         }
@@ -86,17 +81,17 @@ public class NasdaqSymbolCounter extends Configured implements Tool {
 
 		// This is what the Mapper will be outputting to the Reducer
 		job.setMapOutputKeyClass(Text.class);
-		job.setMapOutputValueClass(LongWritable.class);
+		job.setMapOutputValueClass(DoubleWritable.class);
 
 		// This is what the Reducer will be outputting
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(LongWritable.class);
+		job.setOutputValueClass(Text.class);
 
 		// Setting the input folder of the job 
-		FileInputFormat.addInputPath(job, new Path(jobArguments[0]));
+		FileInputFormat.addInputPath(job, new Path(args[0]));
 
 		// Preparing the output folder by first deleting it if it exists
-        Path output = new Path(jobArguments[1]);
+        Path output = new Path(args[1]);
         FileSystem.get(conf).delete(output, true);
 	    FileOutputFormat.setOutputPath(job, output);
 
@@ -104,7 +99,7 @@ public class NasdaqSymbolCounter extends Configured implements Tool {
 	}
 
 	public static void main(String[] args) throws Exception {
-		int result = ToolRunner.run(new Configuration(), new NasdaqSymbolCounter(), args);
+		int result = ToolRunner.run(new Configuration(), new NasdaqMarketCapitalization(), args);
 		System.exit(result);
 	}
 
