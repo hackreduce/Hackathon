@@ -8,13 +8,14 @@ import org.apache.hadoop.io.Text;
 
 
 /**
- * Parses a raw record (line of string data) from the NASDAQ CSV data dump into a Java object.
+ * Parses a raw record (line of string data) from the NASDAQ/NYSE CSV data dump into a Java object.
  *
  * Data dump can be found at:
  * http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nasdaq-exchange
+ * http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nyse-exchange
  *
  */
-public class NasdaqRecord {
+public class StockExchangeRecord {
 
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -28,7 +29,7 @@ public class NasdaqRecord {
 	int stockVolume;
 	double stockPriceAdjClose;
 
-	public NasdaqRecord(String inputString) throws IllegalArgumentException {
+	public StockExchangeRecord(String inputString) throws IllegalArgumentException {
 		// CSV header (parsing the inputString is based on this):
 		// exchange, stock_symbol, date, stock_price_open, stock_price_high, stock_price_low,
 		// 		stock_price_close, stock_volume, stock_price_adj_close
@@ -54,7 +55,7 @@ public class NasdaqRecord {
 		}
 	}
 
-	public NasdaqRecord(Text inputText) throws IllegalArgumentException {
+	public StockExchangeRecord(Text inputText) throws IllegalArgumentException {
 		this(inputText.toString());
 	}
 

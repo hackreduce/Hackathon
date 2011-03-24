@@ -1,4 +1,4 @@
-package org.hackreduce.examples.nasdaq;
+package org.hackreduce.examples.stockexchange;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -22,13 +22,14 @@ import org.apache.hadoop.util.ToolRunner;
 
 
 /**
- * This MapReduce job will count the total number of NASDAQ records stored within the
+ * This MapReduce job will count the total number of NASDAQ or NYSE records stored within the
  * files of the given input directories. It will also skip the CSV header.
  *
- * It's meant to be an explicit example to show all the moving parts of MapReduce job.
+ * It's meant to be an explicit example to show all the moving parts of a MapReduce job. Much of
+ * the code is just copied from the models and mapper package.
  *
  */
-public class NasdaqRecordCounter extends Configured implements Tool {
+public class RecordCounter extends Configured implements Tool {
 
 	public enum Count {
 		RECORDS_SKIPPED,
@@ -36,7 +37,7 @@ public class NasdaqRecordCounter extends Configured implements Tool {
 		UNIQUE_KEYS
 	}
 
-	public static class NasdaqRecordCounterMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
+	public static class RecordCounterMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
 
 		// Our own made up key to send all counts to a single Reducer, so we can
 		// aggregate a total value.
@@ -53,7 +54,7 @@ public class NasdaqRecordCounter extends Configured implements Tool {
 			String inputString = value.toString();
 
 			try {
-				// This code is copied from the constructor of NasdaqRecord
+				// This code is copied from the constructor of StockExchangeRecord
 
 				String[] attributes = inputString.split(",");
 
@@ -85,7 +86,7 @@ public class NasdaqRecordCounter extends Configured implements Tool {
 
 	}
 
-	public static class NasdaqRecordCounterReducer extends Reducer<Text, LongWritable, Text, LongWritable> {
+	public static class RecordCounterReducer extends Reducer<Text, LongWritable, Text, LongWritable> {
 
 		@Override
 		protected void reduce(Text key, Iterable<LongWritable> values, Context context) throws IOException, InterruptedException {
@@ -115,10 +116,10 @@ public class NasdaqRecordCounter extends Configured implements Tool {
         job.setJobName(getClass().getName());
 
         // Tell the job which Mapper and Reducer to use (classes defined above)
-        job.setMapperClass(NasdaqRecordCounterMapper.class);
-		job.setReducerClass(NasdaqRecordCounterReducer.class);
+        job.setMapperClass(RecordCounterMapper.class);
+		job.setReducerClass(RecordCounterReducer.class);
 
-		// The Nasdaq data dump comes in as a CSV file (text input), so we configure
+		// The Nasdaq/NYSE data dumps comes in as a CSV file (text input), so we configure
 		// the job to use this format.
 		job.setInputFormatClass(TextInputFormat.class);
 
@@ -142,7 +143,7 @@ public class NasdaqRecordCounter extends Configured implements Tool {
 	}
 
 	public static void main(String[] args) throws Exception {
-		int result = ToolRunner.run(new Configuration(), new NasdaqRecordCounter(), args);
+		int result = ToolRunner.run(new Configuration(), new RecordCounter(), args);
 		System.exit(result);
 	}
 

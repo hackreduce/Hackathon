@@ -1,4 +1,4 @@
-package org.hackreduce.examples.nasdaq;
+package org.hackreduce.examples.stockexchange;
 
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -16,32 +16,32 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
-import org.hackreduce.mappers.NasdaqMapper;
-import org.hackreduce.models.NasdaqRecord;
+import org.hackreduce.mappers.StockExchangeMapper;
+import org.hackreduce.models.StockExchangeRecord;
 
 
 /**
- * This MapReduce job will read the Nasdaq dataset and output the highest market caps
+ * This MapReduce job will read the NASDAQ or NYSE daily prices dataset and output the highest market caps
  * obtained by each Stock symbol.
  *
  */
-public class NasdaqMarketCapitalization extends Configured implements Tool {
+public class MarketCapitalization extends Configured implements Tool {
 
 	public enum Count {
 		STOCK_SYMBOLS
 	}
 
-	public static class NasdaqSymbolCounterMapper extends NasdaqMapper<Text, DoubleWritable> {
+	public static class MarketCapitalizationMapper extends StockExchangeMapper<Text, DoubleWritable> {
 
 		@Override
-		protected void map(NasdaqRecord record, Context context) throws IOException, InterruptedException {
+		protected void map(StockExchangeRecord record, Context context) throws IOException, InterruptedException {
 			double marketCap = record.getStockPriceClose() * record.getStockVolume();
 			context.write(new Text(record.getStockSymbol()), new DoubleWritable(marketCap));
 		}
 
 	}
 
-	public static class NasdaqSymbolCounterReducer extends Reducer<Text, DoubleWritable, Text, Text> {
+	public static class MarketCapitalizationReducer extends Reducer<Text, DoubleWritable, Text, Text> {
 
 		NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.getDefault());
 
@@ -73,11 +73,11 @@ public class NasdaqMarketCapitalization extends Configured implements Tool {
         job.setJobName(getClass().getName());
 
         // Tell the job which Mapper and Reducer to use (classes defined above)
-        job.setMapperClass(NasdaqSymbolCounterMapper.class);
-		job.setReducerClass(NasdaqSymbolCounterReducer.class);
+        job.setMapperClass(MarketCapitalizationMapper.class);
+		job.setReducerClass(MarketCapitalizationReducer.class);
 
-		// Configure the job to accept the Nasdaq data as input
-		NasdaqMapper.configureJob(job);
+		// Configure the job to accept the NASDAQ/NYSE data as input
+		StockExchangeMapper.configureJob(job);
 
 		// This is what the Mapper will be outputting to the Reducer
 		job.setMapOutputKeyClass(Text.class);
@@ -99,7 +99,7 @@ public class NasdaqMarketCapitalization extends Configured implements Tool {
 	}
 
 	public static void main(String[] args) throws Exception {
-		int result = ToolRunner.run(new Configuration(), new NasdaqMarketCapitalization(), args);
+		int result = ToolRunner.run(new Configuration(), new MarketCapitalization(), args);
 		System.exit(result);
 	}
 

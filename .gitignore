@@ -6,5 +6,6 @@
 /.settings
 /bin-eclipse
 /build
+/dist
 /junit
 /nbproject
