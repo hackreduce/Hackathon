@@ -24,7 +24,7 @@ Take a look at the datasets/ folder to see samples subsets of these datasets.
 Run an example job locally
 --------------------------
 
-1) git clone git@github.com:hoppertravel/HackReduce.git
+1) git clone git://github.com/hoppertravel/HackReduce.git
 2) cd HackReduce
 3) ant
 4) Try running an example from the list below
