@@ -10,21 +10,11 @@ Prerequisites
 - Git
 
 
-Datasets
---------
-- Bixi (Courtesy of Fabrice)
-- Flights (Courtesy of Hopper)
-- NASDAQ daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nasdaq-exchange)
-- NYSE daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nyse-exchange)
-- Wikipedia XML (http://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia)
-
-Take a look at the datasets/ folder to see samples subsets of these datasets.
-
-
 Run an example job locally
 --------------------------
 
 1) git clone git://github.com/hoppertravel/HackReduce.git
+   - Note: You should periodically run "git pull" from within the project directory to update your code.
 2) cd HackReduce
 3) ant
 4) Try running an example from the list below
@@ -32,6 +22,8 @@ Run an example job locally
 
 Examples
 --------
+
+Run any of the following commands in your CLI, and after the job's completed, check the /tmp/* folder for the output.
 
 Bixi:
 > java -classpath ".:dist/hackreduce-0.1.jar:lib/*" org.hackreduce.examples.bixi.RecordCounter datasets/bixi /tmp/bixi_recordcounts
@@ -53,6 +45,17 @@ Wikipedia:
 > java -classpath ".:dist/hackreduce-0.1.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
 
 Note: The jobs are made for the specific datasets, so pairing them up properly is important. The second argument (/tmp/*) is just a made up output path for the results of the job, and can be modified to anything you want.
+
+
+Datasets
+--------
+- Bixi (Courtesy of Fabrice)
+- Flights (Courtesy of Hopper)
+- NASDAQ daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nasdaq-exchange)
+- NYSE daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nyse-exchange)
+- Wikipedia XML (http://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia)
+
+Take a look at the datasets/ folder to see samples subsets of these datasets.
 
 
 Running on a Hadoop cluster
