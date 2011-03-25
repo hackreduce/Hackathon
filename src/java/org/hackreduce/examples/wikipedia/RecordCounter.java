@@ -1,4 +1,4 @@
-package org.hackreduce.examples.bixi;
+package org.hackreduce.examples.wikipedia;
 
 import java.io.IOException;
 
@@ -7,11 +7,11 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.util.ToolRunner;
-import org.hackreduce.mappers.BixiMapper;
 import org.hackreduce.mappers.ModelMapper;
+import org.hackreduce.mappers.WikipediaMapper;
 import org.hackreduce.mappers.XMLInputFormat;
 import org.hackreduce.mappers.XMLRecordReader;
-import org.hackreduce.models.BixiRecord;
+import org.hackreduce.models.WikipediaRecord;
 
 
 /**
@@ -25,7 +25,7 @@ public class RecordCounter extends org.hackreduce.examples.RecordCounter {
 		UNIQUE_KEYS
 	}
 
-	public static class RecordCounterMapper extends BixiMapper<Text, LongWritable> {
+	public static class RecordCounterMapper extends WikipediaMapper<Text, LongWritable> {
 
 		// Our own made up key to send all counts to a single Reducer, so we can
 		// aggregate a total value.
@@ -35,7 +35,7 @@ public class RecordCounter extends org.hackreduce.examples.RecordCounter {
 		public static final LongWritable ONE_COUNT = new LongWritable(1);
 
 		@Override
-		protected void map(BixiRecord record, Context context) throws IOException,
+		protected void map(WikipediaRecord record, Context context) throws IOException,
 				InterruptedException {
 
 			context.getCounter(Count.TOTAL_RECORDS).increment(1);
@@ -46,10 +46,10 @@ public class RecordCounter extends org.hackreduce.examples.RecordCounter {
 
 	@Override
 	public void configureJob(Job job) {
-		// The BIXI datasets are XML files with each station information enclosed withing
-		// the <station></station> tags
+		// The Nasdaq/NYSE data dumps comes in as a CSV file (text input), so we configure
+		// the job to use this format.
 		job.setInputFormatClass(XMLInputFormat.class);
-		XMLRecordReader.setRecordTags(job, "<station>", "</station>");
+		XMLRecordReader.setRecordTags(job, "<page>", "</page>");
 	}
 
 	@Override

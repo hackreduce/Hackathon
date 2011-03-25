@@ -9,7 +9,7 @@ import org.hackreduce.models.BixiRecord;
 
 
 /**
- * Extends the basic Hadoop {@link Mapper} to process the NASDAQ/NYSE daily prices data dump by
+ * Extends the basic Hadoop {@link Mapper} to process the Bixi XML data dump by
  * accessing {@link BixiRecord}
  *
  * @param <K> Output class of the mapper key
