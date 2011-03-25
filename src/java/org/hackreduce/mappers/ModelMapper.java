@@ -19,7 +19,7 @@ import org.hackreduce.models.StockExchangeRecord;
 public abstract class ModelMapper<M, IK, IV, K extends WritableComparable<?>, V extends Writable>
 extends Mapper<IK, IV, K, V> {
 
-	public enum Count {
+	public enum ModelMapperCount {
 		RECORDS_SKIPPED,
 		RECORDS_MAPPED
 	}
@@ -35,11 +35,11 @@ extends Mapper<IK, IV, K, V> {
 		try {
 			record = instantiateModel(key, value);
 		} catch (Exception e) {
-			context.getCounter(Count.RECORDS_SKIPPED).increment(1);
+			context.getCounter(ModelMapperCount.RECORDS_SKIPPED).increment(1);
 		}
 
 		if (record != null) {
-			context.getCounter(Count.RECORDS_MAPPED).increment(1);
+			context.getCounter(ModelMapperCount.RECORDS_MAPPED).increment(1);
 			map(record, context);
 		}
 	}

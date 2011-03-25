@@ -69,6 +69,7 @@ public class HighestDividend extends Configured implements Tool {
 
         // Creating the MapReduce job (configuration) object
         Job job = new Job(conf);
+        job.setJarByClass(getClass());
         job.setJobName(getClass().getName());
 
         // Tell the job which Mapper and Reducer to use (classes defined above)
