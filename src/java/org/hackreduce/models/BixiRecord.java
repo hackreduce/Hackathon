@@ -18,29 +18,24 @@ import org.xml.sax.InputSource;
 
 public class BixiRecord {
 
-	SimpleDateFormat sdf = new SimpleDateFormat("dd_MM_yyyy__HH_mm_ss");
+	private static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd_MM_yyyy__HH_mm_ss");
 
-	Date date;
-	int stationId;
-	String name;
-	String terminalName;
-	double latitude;
-	double longitude;
-	boolean installed;
-	boolean locked;
-	Date installDate = null;
-	Date removalDate = null;
-	boolean temporary;
-	int nbBikes;
-	int nbEmptyDocks;
-
+	private Date date;
+	private int stationId;
+	private String name;
+	private String terminalName;
+	private double latitude;
+	private double longitude;
+	private boolean installed;
+	private boolean locked;
+	private Date installDate;
+	private Date removalDate;
+	private boolean temporary;
+	private int nbBikes;
+	private int nbEmptyDocks;
+	
 	public BixiRecord(String xmlFilename, String xml) throws IllegalArgumentException {
 		String filename = xmlFilename.endsWith(".xml") ? xmlFilename.replace(".xml", "") : xmlFilename;
-		try {
-			setDate(sdf.parse(filename));
-		} catch (ParseException e) {
-			throw new IllegalArgumentException("Couldn't extract the date from the XML filename: " + xmlFilename);
-		}
 
 		// XML is like violence...
 	    try {
@@ -71,6 +66,10 @@ public class BixiRecord {
 			if (removalDateString != null)
 				setRemovalDate(new Date(Long.parseLong(removalDateString)));
 
+			String dateString = getStringFromTag(station, "date");
+			if (dateString != null)
+				setDate(new Date(Long.parseLong(dateString)));
+			
 			setTemporary(Boolean.parseBoolean(getStringFromTag(station, "temporary")));
 			setNbBikes(Integer.parseInt(getStringFromTag(station, "nbBikes")));
 			setNbEmptyDocks(Integer.parseInt(getStringFromTag(station, "nbEmptyDocks")));
@@ -79,6 +78,13 @@ public class BixiRecord {
 			throw new IllegalArgumentException("Couldn't create a " + getClass().getName() + " record from the given XML");
 		}
 	    
+	    if (getDate() == null) {
+			try {
+				setDate(SIMPLE_DATE_FORMAT.parse(filename));
+			} catch (ParseException e) {
+				throw new IllegalArgumentException("Couldn't extract the date from the XML filename: " + xmlFilename);
+			}
+	    }
 	}
 
 	private String getStringFromTag(Element rootElement, String tagname) {
@@ -201,6 +207,48 @@ public class BixiRecord {
 
 	public void setNbEmptyDocks(int nbEmptyDocks) {
 		this.nbEmptyDocks = nbEmptyDocks;
+	}
+	
+	public String toXML() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append("<station>\n");
+		buffer.append(createXMLTag(String.valueOf(getStationId()), "id"));
+		buffer.append(createXMLTag(String.valueOf(getName()), "name"));
+		buffer.append(createXMLTag(String.valueOf(getTerminalName()), "terminalName"));
+		buffer.append(createXMLTag(String.valueOf(getLatitude()), "lat"));
+		buffer.append(createXMLTag(String.valueOf(getLongitude()), "long"));
+		buffer.append(createXMLTag(String.valueOf(getInstallDate()), "installed"));
+		buffer.append(createXMLTag(String.valueOf(isLocked()), "locked"));
+		buffer.append(createXMLTag(getInstallDate() != null ? SIMPLE_DATE_FORMAT.format(getInstallDate()) : null, "installDate"));
+		buffer.append(createXMLTag(getRemovalDate() != null ? SIMPLE_DATE_FORMAT.format(getRemovalDate()) : null, "removalDate"));
+		buffer.append(createXMLTag(String.valueOf(isTemporary()), "temporary"));
+		buffer.append(createXMLTag(String.valueOf(getNbBikes()), "nbBikes"));
+		buffer.append(createXMLTag(String.valueOf(getNbEmptyDocks()), "nbEmptyDocks"));
+		buffer.append(createXMLTag(getDate() != null ? SIMPLE_DATE_FORMAT.format(getDate()) : null, "date"));
+		buffer.append("</station>\n");
+		return buffer.toString();
+	}
+	
+	/**
+	 * Create an XML tag for this Bixi record.
+	 * @param value
+	 * @param tagName
+	 * @return
+	 */
+	public String createXMLTag(String value, String tagName) {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append('<');
+		buffer.append(tagName);
+		if (value != null) {
+			buffer.append('>');
+			buffer.append(value);
+			buffer.append("</");
+			buffer.append(tagName);
+		} else {
+			buffer.append('/');
+		}
+		buffer.append(">\n");
+		return buffer.toString();
 	}
 
 }
