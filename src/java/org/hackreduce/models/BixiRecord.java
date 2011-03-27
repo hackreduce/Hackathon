@@ -1,6 +1,7 @@
 package org.hackreduce.models;
 
 import java.io.StringReader;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,6 +10,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.hadoop.io.Text;
+import org.apache.log4j.Logger;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -18,6 +20,8 @@ import org.xml.sax.InputSource;
 
 public class BixiRecord {
 
+	Logger LOG = Logger.getLogger(BixiRecord.class);
+	
 	private static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd_MM_yyyy__HH_mm_ss");
 
 	private Date date;
@@ -75,6 +79,7 @@ public class BixiRecord {
 			setNbEmptyDocks(Integer.parseInt(getStringFromTag(station, "nbEmptyDocks")));
 	    } catch (Exception e) {
 	    	// Gotta catch 'em all!
+	    	LOG.error(e.getMessage(), e);
 			throw new IllegalArgumentException("Couldn't create a " + getClass().getName() + " record from the given XML");
 		}
 	    
@@ -219,12 +224,12 @@ public class BixiRecord {
 		buffer.append(createXMLTag(String.valueOf(getLongitude()), "long"));
 		buffer.append(createXMLTag(String.valueOf(getInstallDate()), "installed"));
 		buffer.append(createXMLTag(String.valueOf(isLocked()), "locked"));
-		buffer.append(createXMLTag(getInstallDate() != null ? SIMPLE_DATE_FORMAT.format(getInstallDate()) : null, "installDate"));
-		buffer.append(createXMLTag(getRemovalDate() != null ? SIMPLE_DATE_FORMAT.format(getRemovalDate()) : null, "removalDate"));
+		buffer.append(createXMLTag(getInstallDate() != null ? String.valueOf(getInstallDate().getTime()) : null, "installDate"));
+		buffer.append(createXMLTag(getRemovalDate() != null ? String.valueOf(getRemovalDate().getTime()) : null, "removalDate"));
 		buffer.append(createXMLTag(String.valueOf(isTemporary()), "temporary"));
 		buffer.append(createXMLTag(String.valueOf(getNbBikes()), "nbBikes"));
 		buffer.append(createXMLTag(String.valueOf(getNbEmptyDocks()), "nbEmptyDocks"));
-		buffer.append(createXMLTag(getDate() != null ? SIMPLE_DATE_FORMAT.format(getDate()) : null, "date"));
+		buffer.append(createXMLTag(getDate() != null ? String.valueOf(getDate().getTime()) : null, "date"));
 		buffer.append("</station>\n");
 		return buffer.toString();
 	}

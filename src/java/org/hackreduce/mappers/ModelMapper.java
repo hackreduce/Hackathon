@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.log4j.Logger;
 import org.hackreduce.models.StockExchangeRecord;
 
 /**
@@ -19,6 +20,8 @@ import org.hackreduce.models.StockExchangeRecord;
 public abstract class ModelMapper<M, IK, IV, K extends WritableComparable<?>, V extends Writable>
 extends Mapper<IK, IV, K, V> {
 
+	Logger LOG = Logger.getLogger(ModelMapper.class); 
+	
 	public enum ModelMapperCount {
 		RECORDS_SKIPPED,
 		RECORDS_MAPPED
@@ -35,6 +38,7 @@ extends Mapper<IK, IV, K, V> {
 		try {
 			record = instantiateModel(key, value);
 		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
 			context.getCounter(ModelMapperCount.RECORDS_SKIPPED).increment(1);
 		}
 
