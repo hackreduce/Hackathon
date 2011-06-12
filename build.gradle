@@ -1,0 +1,31 @@
+version = '0.2'
+
+// Modify these values if you want to build against different versions of Hadoop
+hadoop_version = '0.20.2'
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.6
+
+jar {
+  manifest {
+      attributes 'Implementation-Title': 'HackReduce', 'Implementation-Version': version
+  }
+}
+
+repositories {
+  // mavenRepo urls: "http://builds.archive.org:8080/maven2"
+  // mavenRepo urls: "http://maven.restlet.org/"
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.apache.hadoop:hadoop-core:' + hadoop_version
+  compile 'org.apache.hadoop:hadoop-streaming:' + hadoop_version
+  compile 'org.apache.hadoop:hadoop-tools:' + hadoop_version
+  compile 'org.apache.hadoop:hadoop-test:' + hadoop_version
+}
+

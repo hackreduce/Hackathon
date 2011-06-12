@@ -4,6 +4,7 @@
 /.loadpath
 /.project
 /.settings
+/.gradle
 /bin-eclipse
 /build
 /dist

@@ -20,6 +20,7 @@ package org.hackreduce.mappers;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
@@ -34,11 +35,10 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
-import org.apache.log4j.Logger;
 
 public class XMLRecordReader extends RecordReader<Text, Text>{
 
-    private static final Logger LOG = Logger.getLogger(XMLRecordReader.class);
+    private static final Logger LOG = Logger.getLogger(XMLRecordReader.class.getName());
     
     public static final String BEGIN = "hadoop.mapred.xmlrecordreader.begin";
     public static final String END = "hadoop.mapred.xmlrecordreader.end";

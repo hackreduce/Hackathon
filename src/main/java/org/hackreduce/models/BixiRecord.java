@@ -1,16 +1,16 @@
 package org.hackreduce.models;
 
 import java.io.StringReader;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.hadoop.io.Text;
-import org.apache.log4j.Logger;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -20,7 +20,7 @@ import org.xml.sax.InputSource;
 
 public class BixiRecord {
 
-	Logger LOG = Logger.getLogger(BixiRecord.class);
+	Logger LOG = Logger.getLogger(BixiRecord.class.getName());
 	
 	private static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd_MM_yyyy__HH_mm_ss");
 
@@ -79,7 +79,7 @@ public class BixiRecord {
 			setNbEmptyDocks(Integer.parseInt(getStringFromTag(station, "nbEmptyDocks")));
 	    } catch (Exception e) {
 	    	// Gotta catch 'em all!
-	    	LOG.error(e.getMessage(), e);
+	    	LOG.log(Level.WARNING, e.getMessage(), e);
 			throw new IllegalArgumentException("Couldn't create a " + getClass().getName() + " record from the given XML");
 		}
 	    
