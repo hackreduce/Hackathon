@@ -27,22 +27,27 @@ Examples
 Run any of the following commands in your CLI, and after the job's completed, check the /tmp/* folder for the output.
 
 Bixi:
+
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.bixi.RecordCounter datasets/bixi /tmp/bixi_recordcounts
 
 NASDAQ:
+
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nasdaq/dividends /tmp/nasdaq_dividends
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nasdaq/daily_prices /tmp/nasdaq_marketcaps
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nasdaq/daily_prices /tmp/nasdaq_recordcounts
 
 NYSE:
+
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nyse/dividends /tmp/nyse_dividends
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nyse/daily_prices /tmp/nyse_marketcaps
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nyse/daily_prices /tmp/nyse_recordcounts
 
 Flights:
+
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.flights.RecordCounter datasets/flights /tmp/flights_recordcounts
 
 Wikipedia:
+
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
 
 Note: The jobs are made for the specific datasets, so pairing them up properly is important. The second argument (/tmp/*) is just a made up output path for the results of the job, and can be modified to anything you want.
@@ -66,5 +71,6 @@ If you'd like to set up an actual Hadoop cluster (single or multi node), then fo
 If you're running the HackReduce virtual image, or you're trying to run the example job against an actual install of Hadoop, the process should be similar. However, you'll need to upload the datasets folder into HDFS (if you're running it), or just make a note of the path.
 
 Example:
+
     $ bin/hadoop jar <path_to_hackreduce_jar>/HackReduce-0.2.jar org.hackreduce.examples.stockexchange.RecordCounter <path to>/datasets/nyse/daily_prices /tmp/nyse_recordcounts
 
