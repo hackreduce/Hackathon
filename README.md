@@ -37,27 +37,27 @@ Examples
 
 Run any of the following commands in your CLI, and after the job's completed, check the /tmp/* folder for the output.
 
-Bixi:
+**Bixi:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.bixi.RecordCounter datasets/bixi /tmp/bixi_recordcounts
 
-NASDAQ:
+**NASDAQ:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nasdaq/dividends /tmp/nasdaq_dividends
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nasdaq/daily_prices /tmp/nasdaq_marketcaps
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nasdaq/daily_prices /tmp/nasdaq_recordcounts
 
-NYSE:
+**NYSE:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nyse/dividends /tmp/nyse_dividends
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nyse/daily_prices /tmp/nyse_marketcaps
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nyse/daily_prices /tmp/nyse_recordcounts
 
-Flights:
+**Flights:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.flights.RecordCounter datasets/flights /tmp/flights_recordcounts
 
-Wikipedia:
+**Wikipedia:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
 
@@ -66,6 +66,7 @@ Note: The jobs are made for the specific datasets, so pairing them up properly i
 
 Datasets
 --------
+
 * Bixi (Courtesy of Fabrice)
 * Flights (Courtesy of Hopper)
 * NASDAQ daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nasdaq-exchange)
@@ -84,4 +85,23 @@ If you're running the HackReduce virtual image, or you're trying to run the exam
 Example:
 
     $ bin/hadoop jar <path_to_hackreduce_jar>/HackReduce-0.2.jar org.hackreduce.examples.stockexchange.RecordCounter <path to>/datasets/nyse/daily_prices /tmp/nyse_recordcounts
+
+
+Setting up for development
+--------------------------
+
+### Gradle (recommended):
+
+We recommend using Gradle for easy set up of the project in Eclipse, Idea, or other IDEs through Gradle plugins (http://www.gradle.org/standard_plugins.html). To use it, simply run one of the following:
+
+    $ gradle eclipse
+
+    $ gradle idea
+
+Then import the project into your IDE of choice. This will download all of the dependencies (including sources) and create the necessary project files.
+
+
+### Manual setup:
+
+You can also bring in the project manually into your IDE and then include all the *.jar files from the **lib** folder of the project.
 

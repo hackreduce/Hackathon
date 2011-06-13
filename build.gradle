@@ -5,8 +5,9 @@ hadoop_version = '0.20.2'
 
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 
 group = 'org.hackreduce'
 
