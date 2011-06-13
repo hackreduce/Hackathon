@@ -8,6 +8,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 
+group = 'org.hackreduce'
+
 sourceCompatibility = 1.6
 
 jar {
@@ -17,8 +19,6 @@ jar {
 }
 
 repositories {
-  // mavenRepo urls: "http://builds.archive.org:8080/maven2"
-  // mavenRepo urls: "http://maven.restlet.org/"
   mavenCentral()
 }
 
@@ -29,3 +29,49 @@ dependencies {
   compile 'org.apache.hadoop:hadoop-test:' + hadoop_version
 }
 
+def pomConfig = {
+  name 'HackReduce'
+  description 'HackReduce related code'
+  url 'http://hackreduce.org'
+  organization {
+    name 'Hopper Travel'
+    url 'http://hopper.travel'
+  }
+  issueManagement {
+    system 'Github'
+    url 'https://github.com/hoppertravel/HackReduce/issues'
+  }
+  scm {
+    url "https://github.com/hoppertravel/HackReduce"
+    connection "scm:git:http://github.com/hoppertravel/HackReduce.git"
+    developerConnection "scm:git:git@github.com:hoppertravel/HackReduce.git"
+  }
+  licenses {
+    license {
+      name 'MIT License'
+      url 'http://www.opensource.org/licenses/mit-license.php'
+      distribution 'repo'
+    }
+  }
+  developers {
+    developer {
+      id 'hopper-team'
+      name 'The Hopper Travel Team'
+      organization 'Hopper Travel'
+      organizationUrl 'http://hopper.travel'
+    }
+  }
+}
+
+configure(install.repositories.mavenInstaller) {
+  pom.project pomConfig
+}
+
+task sourcesJar(type: Jar, dependsOn: compileJava) {
+  from sourceSets.main.allSource
+  classifier = 'sources'
+}
+
+artifacts {
+  archives sourcesJar
+}

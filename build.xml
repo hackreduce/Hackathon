@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project basedir="." default="jar" name="hackreduce">
+<project basedir="." default="jar" name="HackReduce">
 
-    <property name="version" value="0.1" />
+    <property name="version" value="0.2" />
 
     <property name="lib.dir" value="${basedir}/lib" />
-    <property name="build.dir" value="build" />
-    <property name="src.dir" value="src/java" />
-    <property name="target.dir" value="dist" />
+    <property name="src.dir" value="${basedir}/src/main/java" />
+    <property name="build.dir" value="${basedir}/build/classes/main" />
+    <property name="target.dir" value="${basedir}/build/libs" />
 
     <!-- ================================= 
           target: clean              
@@ -29,7 +29,7 @@
             </fileset>
           </classpath>
         </javac>
-    	<property name="msg" value="hackreduce-${version}"/>
+    	<property name="msg" value="HackReduce-${version}"/>
     </target>
 
     <!-- ================================= 
@@ -37,7 +37,7 @@
          ================================= -->
     <target name="jar" depends="compile" description="--> create the jar file">
       <mkdir dir="${target.dir}" />
-    	<jar destfile="${target.dir}/hackreduce-${version}.jar">
+    	<jar destfile="${target.dir}/HackReduce-${version}.jar">
       	<fileset dir="${build.dir}"/>
     	</jar>
     </target>
