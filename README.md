@@ -61,6 +61,14 @@ Run any of the following commands in your CLI, and after the job's completed, ch
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
 
+**1gram:**
+
+    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.one_gram.RecordCounter datasets/ngram/1gram /tmp/1gram_recordcounts
+
+**2gram:**
+
+    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.two_gram.RecordCounter datasets/ngram/2gram /tmp/2gram_recordcounts
+
 Note: The jobs are made for the specific datasets, so pairing them up properly is important. The second argument (/tmp/*) is just a made up output path for the results of the job, and can be modified to anything you want.
 
 
@@ -72,6 +80,7 @@ Datasets
 * NASDAQ daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nasdaq-exchange)
 * NYSE daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nyse-exchange)
 * Wikipedia XML (http://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia)
+* Google Ngram (http://ngrams.googlelabs.com/datasets)
 
 Take a look at the datasets/ folder to see samples subsets of these datasets.
 
