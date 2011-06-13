@@ -7,7 +7,7 @@ http://www.hackreduce.org
 Prerequisites
 -------------
 * Java 1.6+
-* Gradle (http://www.gradle.org/installation.html)
+* Gradle (http://www.gradle.org/installation.html) or Ant
 * Git
 
 
@@ -17,7 +17,14 @@ Run an example job locally
 1. git clone git://github.com/hoppertravel/HackReduce.git
    - Note: You should periodically run "git pull" from within the project directory to update your code.
 2. cd HackReduce
-3. gradle jar
+3.
+Gradle:
+
+    $ gradle jar
+
+Ant:
+
+    $ ant
 4. Try running an example from the list below
 
 
