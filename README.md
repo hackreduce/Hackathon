@@ -16,8 +16,11 @@ Run an example job locally
 
 1. git clone git://github.com/hoppertravel/HackReduce.git
    - Note: You should periodically run "git pull" from within the project directory to update your code.
+
 2. cd HackReduce
+
 3.
+
 Gradle:
 
     $ gradle jar
@@ -25,6 +28,7 @@ Gradle:
 Ant:
 
     $ ant
+
 4. Try running an example from the list below
 
 
