@@ -12,6 +12,8 @@ group = 'org.hackreduce'
 
 sourceCompatibility = 1.6
 
+defaultTasks "clean", "jar"
+
 jar {
   manifest {
       attributes 'Implementation-Title': 'HackReduce', 'Implementation-Version': version

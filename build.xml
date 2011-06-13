@@ -5,23 +5,23 @@
 
     <property name="lib.dir" value="${basedir}/lib" />
     <property name="src.dir" value="${basedir}/src/main/java" />
-    <property name="build.dir" value="${basedir}/build/classes/main" />
-    <property name="target.dir" value="${basedir}/build/libs" />
+    <property name="build.dir" value="${basedir}/build" />
+    <property name="classes.dir" value="${build.dir}/classes/main" />
+    <property name="target.dir" value="${build.dir}/libs" />
 
     <!-- ================================= 
           target: clean              
          ================================= -->
     <target name="clean" description="--> clean the project">
         <delete dir="${build.dir}" quiet="true"/>
-        <delete dir="${target.dir}" quiet="true"/>
     </target>
 
     <!-- ================================= 
           target: compile
          ================================= -->
     <target name="compile" depends="clean" description="--> compile the project">
-        <mkdir dir="${build.dir}" />
-        <javac srcdir="${src.dir}" destdir="${build.dir}">
+        <mkdir dir="${classes.dir}" />
+        <javac srcdir="${src.dir}" destdir="${classes.dir}">
           <classpath>
             <pathelement path="${classpath}"/>
             <fileset dir="${lib.dir}">
@@ -29,7 +29,7 @@
             </fileset>
           </classpath>
         </javac>
-    	<property name="msg" value="HackReduce-${version}"/>
+    	<property name="msg" value="${ant.project.name}-${version}"/>
     </target>
 
     <!-- ================================= 
@@ -37,8 +37,8 @@
          ================================= -->
     <target name="jar" depends="compile" description="--> create the jar file">
       <mkdir dir="${target.dir}" />
-    	<jar destfile="${target.dir}/HackReduce-${version}.jar">
-      	<fileset dir="${build.dir}"/>
+    	<jar destfile="${target.dir}/${ant.project.name}-${version}.jar">
+      	<fileset dir="${classes.dir}"/>
     	</jar>
     </target>
 

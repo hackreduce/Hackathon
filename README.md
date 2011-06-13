@@ -19,15 +19,15 @@ Run an example job locally
 
 2. cd HackReduce
 
-3.
+3. Build the project depending on what tool you have installed:
 
-Gradle:
+    Gradle:
 
-    $ gradle jar
+        $ gradle
 
-Ant:
+    Ant:
 
-    $ ant
+        $ ant
 
 4. Try running an example from the list below
 
