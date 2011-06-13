@@ -49,9 +49,9 @@ public class StockExchangeRecord {
 			setStockVolume(Integer.parseInt(attributes[7]));
 			setStockPriceAdjClose(Double.parseDouble(attributes[8]));
 		} catch (ParseException e) {
-			throw new IllegalArgumentException("Input string contained an unknown value that couldn't be parsed");
+			throw new IllegalArgumentException("Input string contained an unknown value that couldn't be parsed", e);
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("Input string contained an unknown number value that couldn't be parsed");
+			throw new IllegalArgumentException("Input string contained an unknown number value that couldn't be parsed", e);
 		}
 	}
 

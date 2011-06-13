@@ -38,9 +38,9 @@ public class StockExchangeDividend {
 			setDate(sdf.parse(attributes[2]));
 			setDividend(Double.parseDouble(attributes[3]));
 		} catch (ParseException e) {
-			throw new IllegalArgumentException("Input string contained an unknown value that couldn't be parsed");
+			throw new IllegalArgumentException("Input string contained an unknown value that couldn't be parsed", e);
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("Input string contained an unknown number value that couldn't be parsed");
+			throw new IllegalArgumentException("Input string contained an unknown number value that couldn't be parsed", e);
 		}
 	}
 

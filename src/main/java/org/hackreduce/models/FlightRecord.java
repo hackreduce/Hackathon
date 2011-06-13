@@ -35,7 +35,7 @@ public class FlightRecord {
 			setPrice(Double.parseDouble(attributes[4]));
 			setDate(new Date(Long.parseLong(attributes[5])));
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("Input string contained an unknown number value that couldn't be parsed");
+			throw new IllegalArgumentException("Input string contained an unknown number value that couldn't be parsed", e);
 		}
 	}
 
