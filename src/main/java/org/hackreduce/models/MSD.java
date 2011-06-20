@@ -1,13 +1,5 @@
 package org.hackreduce.models;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.hadoop.io.Text;
 
 
@@ -82,22 +74,6 @@ public class MSD {
     private int track7digitalid;
     private int year;
 
-    public static void main(String[] args) throws IOException {
-        List<MSD> songs = new ArrayList<MSD>();
-        FileInputStream fstream = new FileInputStream("datasets/msd/msd.tsv");
-        DataInputStream in = new DataInputStream(fstream);
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
-        String strLine;
-        while ((strLine = br.readLine()) != null) {
-            MSD msd = new MSD(strLine);
-            songs.add(msd);
-        }
-        in.close();
-        
-        for (MSD song : songs) {
-            System.out.println(song.getTitle());
-        }
-    }
 
     public MSD(String inputString) {
         String[] fields = inputString.split("\t");
@@ -105,7 +81,6 @@ public class MSD {
         if (fields.length != 54)
             throw new IllegalArgumentException("Input string given did not match the expected MSD tsv format");
 
-        try {
         setTrackId(fields[0]);
         setAnalysisSampleRate(parseInt(fields[1]));
         setArtist7DigitalId(parseInt(fields[2]));
@@ -160,9 +135,6 @@ public class MSD {
         setTitle(fields[51]);
         setTrack7digitalid(parseInt(fields[52]));
         setYear(parseInt(fields[53]));
-        } catch (NumberFormatException e) {
-            System.out.println(e);
-        }
     }
 
     public MSD(Text inputText) {
