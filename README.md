@@ -6,24 +6,28 @@ http://www.hackreduce.org
 
 Prerequisites
 -------------
-* Java 1.6+
-* Gradle (http://www.gradle.org/installation.html) or Ant
+* Java 1.6
+* Build tool (can use either one):
+    * Gradle (http://www.gradle.org/installation.html)
+    * Ant
 * Git
 
 
 Run an example job locally
 --------------------------
 
-1. git clone git://github.com/hoppertravel/HackReduce.git
-   - Note: You should periodically run "git pull" from within the project directory to update your code.
+1. `git clone git://github.com/hoppertravel/HackReduce.git`
+   (you should occasionally run "git pull" from within the project directory to update your code)
 
-2. cd HackReduce
+2. `cd HackReduce`
 
 3. Build the project depending on what tool you have installed:
 
     Gradle:
 
         $ gradle
+
+    **OR**
 
     Ant:
 
@@ -61,13 +65,17 @@ Run any of the following commands in your CLI, and after the job's completed, ch
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
 
-**1gram:**
+**Google 1gram:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.one_gram.RecordCounter datasets/ngram/1gram /tmp/1gram_recordcounts
 
-**2gram:**
+**Google 2gram:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.two_gram.RecordCounter datasets/ngram/2gram /tmp/2gram_recordcounts
+
+**MSD:**
+
+    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.msd.RecordCounter datasets/msd /tmp/msd_recordcounts
 
 Note: The jobs are made for the specific datasets, so pairing them up properly is important. The second argument (/tmp/*) is just a made up output path for the results of the job, and can be modified to anything you want.
 
@@ -81,6 +89,10 @@ Datasets
 * NYSE daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nyse-exchange)
 * Wikipedia XML (http://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia)
 * Google Ngram (http://ngrams.googlelabs.com/datasets)
+* DNS "com" tld root file containing name and associated nameserver
+* LDEO Surface Ocean CO2 Climatology data (http://www.pmel.noaa.gov/co2/story/LDEO+Surface+Ocean+CO2+Climatology)
+* Twitter data of social graph, user id to names, and celebrity profiles. This does not contain actual tweets because of Twitter policies (http://an.kaist.ac.kr/traces/WWW2010.html)
+* Million Song Dataset (http://labrosa.ee.columbia.edu/millionsong/pages/getting-dataset) **Special thanks to Echo Nest for converting the whole 200+ GB HDF5 format of the dataset to TSV for us**
 
 Take a look at the datasets/ folder to see samples subsets of these datasets.
 
