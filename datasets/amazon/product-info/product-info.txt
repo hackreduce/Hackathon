@@ -1,0 +1,50 @@
+BREAK-REVIEWED
+ 0000000868	 Reader Turntable SE-14	 Books		$17.00 	$11.05		 Peter Hyun,Dong-Il Park by Peter Hyun,Dong-Il Park
+BREAK-REVIEWED
+ 0000020214	 Connoisseur's Handbook of Marijuana	 Books					
+BREAK-REVIEWED
+ 0000024341	 Groundwork of Evangelion	 Books					 Hideaki Anno by Hideaki Anno
+Foreign Language Books->Japanese->All Japanese Books
+BREAK-REVIEWED
+ 0000401048	 The rogue of publishers' row;	 Confessions of a publisher (A Banner Book)					 Books :  Edward Uhlan by Edward Uhlan
+BREAK-REVIEWED
+ 0000913154	 The Way Things Work	 An Illustrated Encyclopedia of Technology					 Books :  Bibliographisches Institut AG,C[arel]. van Amerongen,C. van Amerongen,C. van Amerongen (translator),Bibliographisches Institut by Bibliographisches Institut AG,C[arel]. van Amerongen,C. van Amerongen,C. van Amerongen (translator),Bibliographisches Institut
+BREAK-REVIEWED
+ 0001006002	 The Rescue Party	 Books					 Nick Butterworth,Richard Briers by Nick Butterworth,Richard Briers
+Subjects->Children's Books->Literature
+Subjects->Literature & Fiction
+BREAK-REVIEWED
+ 0001024388	 The Moon of Gomrath	 Books		$14.05 	$10.82		 Alan Garner,Robert Powell by Alan Garner,Robert Powell
+Books on Cassette->General
+Books on Cassette->Science Fiction & Fantasy->Fantasy
+Subjects->Children's Books->Literature->Science Fiction, Fantasy, Mystery & Horror->Science Fiction, Fantasy, & Magic
+Subjects->Science Fiction & Fantasy->Authors, A-Z->( G )->Garner, Alan
+BREAK-REVIEWED
+ 000102521X	 The Fatal Strand (Tales from the Wyrd Museum S.)	 Books					 Robin Jarvis,Nickolas Grace by Robin Jarvis,Nickolas Grace
+Books on Cassette->General
+Books on Cassette->Horror
+Subjects->Children's Books->Literature->Science Fiction, Fantasy, Mystery & Horror->Spine-Chilling Horror
+BREAK-REVIEWED
+ 0001035649	 Under Milk Wood	 Books					 Dylan Thomas by Dylan Thomas
+Books on Cassette->Authors, A-Z->( T )->Thomas, Dylan
+Books on Cassette->General
+Books on Cassette->Literature & Fiction->Poetry, Drama & Short Stories
+Subjects->Literature & Fiction->Authors, A-Z->( T )->Thomas, Dylan
+Subjects->Literature & Fiction->Drama
+Subjects->Literature & Fiction->Poetry->Poets, A-Z->( T )->Thomas, Dylan
+Subjects->Literature & Fiction->Poetry->Single Authors
+BREAK-REVIEWED
+ 0001042335	 Hamlet Performed by Paul Scofield, Diana Wynyard, Wilfred Lawson & Cast	 Books					 William Shakespeare by William Shakespeare
+Books on Cassette->Authors, A-Z->( S )->Shakespeare, William
+Books on Cassette->General
+Subjects->Literature & Fiction->Authors, A-Z->( S )->Shakespeare, William->General
+Subjects->Literature & Fiction->Drama->Playwrights, A-Z->( S )->Shakespeare, William
+BREAK-REVIEWED
+ 0001046810	 Tess of the D'Urbervilles	 Books		$18.00 	$11.70		 Thomas Hardy,Peter Firth by Thomas Hardy,Peter Firth
+Books on Cassette->Authors, A-Z->( H )->Hardy, Thomas
+Books on Cassette->General
+Books on Cassette->Literature & Fiction->Literary Classics
+Subjects->Literature & Fiction->Authors, A-Z->( H )->Hardy, Thomas
+Subjects->Literature & Fiction->General->Classics
+Subjects->Literature & Fiction->General->Literary
+Subjects->Literature & Fiction->World Literature->British->19th Century
