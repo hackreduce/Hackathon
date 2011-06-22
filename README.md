@@ -93,12 +93,13 @@ Streaming example
 
 * Python
 
-    `$ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/py_streaming_count -mapper streaming/nasdaq_counter.py -reducer aggregate`
+        $ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/py_streaming_count -mapper streaming/nasdaq_counter.py -reducer aggregate
 
 * Ruby
 
-    `$ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/rb_streaming_count -mapper streaming/nasdaq_counter.rb -reducer aggregate`
+        $ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/rb_streaming_count -mapper streaming/nasdaq_counter.rb -reducer aggregate
 
+`-reducer aggregate` is a built-in function for streaming.
 
 Running on a Hadoop cluster
 ---------------------------
