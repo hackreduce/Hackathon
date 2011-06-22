@@ -1,0 +1,100 @@
+/m/010001k	/common/topic/notable_types	/music/track	
+/m/010006t	/type/object/key	/authority/musicbrainz	d7619d8b-f3a4-46b9-b767-cd06419bba38
+/m/010006t	/type/object/key	/authority/musicbrainz/name	TRACK3374275
+/m/010007p	/music/track/artist	/m/01lbk89	
+/m/010007x	/music/track/artist	/m/01mkgnt	
+/m/010008_	/music/track/artist	/m/01mkgnt	
+/m/010008b	/music/track/artist	/m/01mkgnt	
+/m/010008k	/music/track/artist	/m/01mkgnt	
+/m/010008s	/music/track/artist	/m/01mkgnt	
+/m/0100096	/music/track/artist	/m/01mkgnt	
+/m/010009n	/common/topic/notable_types	/music/track	
+/m/01000cv	/type/object/key	/authority/musicbrainz	18b40c8e-7699-4163-959e-d7d4d0e4a386
+/m/01000cv	/type/object/key	/authority/musicbrainz/name	TRACK3374311
+/m/01000gg	/music/track/length		288.813
+/m/01000gx	/music/track/length		155.586
+/m/01000h_	/music/track/length		0.0
+/m/01000hb	/music/track/length		454.066
+/m/01000hk	/music/track/length		278.24
+/m/01000hk	/type/object/type	/music/track	
+/m/01000hk	/type/object/type	/common/topic	
+/m/01000hs	/music/track/length		0.0
+/m/01000hs	/type/object/key	/authority/musicbrainz	36b60827-64bb-4ae9-a232-43e72e5c4ff5
+/m/01000hs	/type/object/key	/authority/musicbrainz/name	TRACK3374341
+/m/01000j6	/music/track/length		0.0
+/m/01000kz	/music/track/lyrics_website	/m/05_gt_d	
+/m/01000px	/type/object/type	/music/track	
+/m/01000px	/type/object/type	/common/topic	
+/m/01000qs	/type/object/name	/lang/en	My Love Is True
+/m/01000r6	/type/object/key	/authority/musicbrainz	8e5e4229-e932-41eb-a968-b4e9f71f5f9e
+/m/01000r6	/type/object/key	/authority/musicbrainz/name	TRACK3374375
+/m/01000sj	/type/object/key	/authority/musicbrainz	a001e03e-8642-4c7a-8bea-42226c608f14
+/m/01000sj	/type/object/key	/authority/musicbrainz/name	TRACK3374386
+/m/01000t5	/common/topic/notable_types	/music/track	
+/m/01000tm	/type/object/name	/lang/en	Song for Penelope
+/m/01000x7	/common/topic/notable_for		{"types":[], "id":"/music/track", "property":"/type/object/type", "name":"Musical Recording"}
+/m/010015w	/common/topic/notable_for		{"types":[], "id":"/music/track", "property":"/type/object/type", "name":"Musical Recording"}
+/m/01001fj	/common/topic/notable_for		{"types":[], "id":"/music/track", "property":"/type/object/type", "name":"Musical Recording"}
+/m/01001g5	/common/topic/notable_types	/music/track	
+/m/01001gm	/type/object/type	/music/track	
+/m/01001gm	/type/object/type	/common/topic	
+/m/01001l_	/type/object/key	/authority/musicbrainz	fe16c05b-7e1d-49e7-b297-b8a9429ad488
+/m/01001l_	/type/object/key	/authority/musicbrainz/name	TRACK3374540
+/m/01001p5	/common/topic/notable_types	/music/track	
+/m/01001rt	/common/topic/notable_for		{"types":[], "id":"/music/track", "property":"/type/object/type", "name":"Musical Recording"}
+/m/01001t3	/type/object/name	/lang/en	Book of Change
+/m/010020_	/type/object/key	/authority/musicbrainz	b27346a1-84e9-48f8-b33a-0754d65e6c57
+/m/010020_	/type/object/key	/authority/musicbrainz/name	TRACK3374658
+/m/010020_	/type/object/type	/music/track	
+/m/010020_	/type/object/type	/common/topic	
+/m/010023v	/common/topic/notable_types	/music/track	
+/m/010024q	/type/object/name	/lang/en	Friend
+/m/010027k	/type/object/name	/lang/en	Never Goin' Down! (Inc. Future Freak)
+/m/010028	/location/hud_county_place/county	/m/0mr_8	
+/m/010028	/location/location/area		10.6189512524
+/m/01002s5	/type/object/name	/lang/en	Crying in the Chapel
+/m/01002wg	/type/object/name	/lang/en	Frantic (Roman Polanski version)
+/m/0100301	/common/topic/notable_for		{"types":[], "id":"/music/track", "property":"/type/object/type", "name":"Musical Recording"}
+/m/010032x	/type/object/type	/music/track	
+/m/010032x	/type/object/type	/common/topic	
+/m/010033s	/type/object/name	/lang/en	Mommy's Boy
+/m/010036m	/type/object/name	/lang/en	Next Door Neighbour
+/m/0100371	/type/object/name	/lang/en	Dame, de Qui Toute Ma Joie Vient - Ballade [From the Remede de Fortune]
+/m/010038c	/music/composition/composer	/m/018swt	
+/m/010039	/type/object/type	/common/topic	
+/m/010039	/type/object/type	/location/location	
+/m/010039	/type/object/type	/location/citytown	
+/m/010039	/type/object/type	/location/dated_location	
+/m/010039	/type/object/type	/location/statistical_region	
+/m/010039	/type/object/type	/location/hud_county_place	
+/m/010039	/type/object/type	/location/hud_foreclosure_area	
+/m/010039g	/type/object/name	/lang/en	Douce Dame Jolie - Virelai
+/m/01003_	/location/hud_foreclosure_area/total_residential_addresses	/m/07ctbv8	
+/m/01003bs	/type/object/key	/authority/musicbrainz	1857a3bc-513e-4dcd-91f3-74d3df6700ba
+/m/01003bs	/type/object/key	/authority/musicbrainz/name	TRACK3375023
+/m/01003h4	/music/track/song	/m/04g34j	
+/m/01003j0	/music/track/song	/m/02qnwyv	
+/m/01003jg	/type/object/type	/music/track	
+/m/01003l6	/type/object/key	/authority/musicbrainz	10398eb8-f684-4eee-95d5-9c9025b25b4e
+/m/01003l6	/type/object/key	/authority/musicbrainz/name	TRACK3375079
+/m/01003mj	/type/object/key	/authority/musicbrainz	80a8b835-6518-4d46-a7dc-875d924715f2
+/m/01003mj	/type/object/key	/authority/musicbrainz/name	TRACK3375085
+/m/01003n5	/music/track/releases	/m/0385x3g	
+/m/01003r7	/type/object/name	/lang/en	Willie m'a dit
+/m/01003wv	/common/topic/notable_for		{"types":[], "id":"/music/track", "property":"/type/object/type", "name":"Musical Recording"}
+/m/01003y4	/type/object/key	/authority/musicbrainz	8f44ee8e-ccfe-4560-8dab-45814f45ac0c
+/m/01003y4	/type/object/key	/authority/musicbrainz/name	TRACK3375129
+/m/01003yc	/type/object/name	/lang/en	Troubadour
+/m/0100406	/type/object/key	/authority/musicbrainz	18595a7d-5f60-44d2-b855-1f0da544924f
+/m/0100406	/type/object/key	/authority/musicbrainz/name	TRACK3375143
+/m/010041j	/type/object/key	/authority/musicbrainz	722c5b0a-bcd9-4e48-b444-e169f2c08e25
+/m/010041j	/type/object/key	/authority/musicbrainz/name	TRACK3375149
+/m/010041z	/type/object/type	/music/track	
+/m/0100463	/type/object/name	/lang/en	Dans la zone
+/m/01004bq	/music/track/releases	/m/032f93q	
+/m/01004f_	/type/object/key	/authority/musicbrainz	7f1bf8aa-4ae3-42d4-827c-2baf62e6a1be
+/m/01004f_	/type/object/key	/authority/musicbrainz/name	TRACK3375222
+/m/01004fk	/music/track/releases	/m/0395wcb	
+/m/01004lc	/type/object/type	/music/track	
+/m/01004lc	/type/object/type	/common/topic	
+/m/01004n_	/music/track/releases	/m/033prgw	
