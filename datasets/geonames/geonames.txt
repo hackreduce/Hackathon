@@ -1,0 +1,100 @@
+3038814	Costa de Xurius	Costa de Xurius		42.5	1.48333	T	SLP	AD		00				0		1316	Europe/Andorra	1993-12-23
+3038815	Font de la Xona	Font de la Xona		42.55003	1.44986	H	SPNG	AD		04				0		2082	Europe/Andorra	2010-01-11
+3038816	Xixerella	Xixerella		42.55327	1.48736	P	PPL	AD		04				0		1520	Europe/Andorra	2009-04-24
+3038817	Xixerella	Xixerella	Xixerella	42.55	1.48333	A	ADMD	AD		00				0		1548	Europe/Andorra	2011-06-06
+3038818	Riu Xic	Riu Xic		42.56667	1.68333	H	STM	AD		00				0		2340	Europe/Andorra	1993-12-23
+3038819	Pas del Xic	Pas del Xic		42.5	1.58333	R	TRL	AD		00				0		1888	Europe/Andorra	1993-12-23
+3038820	Roc del Xeig	Roc del Xeig		42.56667	1.48333	T	RK	AD		00				0		1508	Europe/Andorra	1993-12-23
+3038821	Collada del Xeig	Collada del Xeig		42.56667	1.48333	T	PK	AD		00				0		1508	Europe/Andorra	1993-12-23
+3038822	Fonts Vives	Fonts Vives		42.5	1.56667	H	SPNG	AD		00				0		1776	Europe/Andorra	1993-12-23
+3038823	Roc de Vista	Roc de Vista		42.5	1.48333	T	RK	AD		00				0		1316	Europe/Andorra	1993-12-23
+3038824	Obaga de Vista	Obaga de Vista		42.48333	1.45	T	SLP	AD		00				0		1195	Europe/Andorra	1993-12-23
+3038825	Coll de Vista	Coll de Vista		42.46667	1.58333	T	SPUR	AD		00				0		2367	Europe/Andorra	1993-12-23
+3038826	Coll de Vista	Coll de Vista	Coll de Vista	42.48333	1.43333	T	PASS	AD		00				0		1938	Europe/Andorra	2011-06-06
+3038827	Visanseny	Visanseny	Visanceny,Visanseny	42.56667	1.61667	L	LCTY	AD	AD	00				0		1920	Europe/Andorra	2011-06-06
+3038828	Roc de la Vinya	Roc de la Vinya		42.53333	1.56667	T	RK	AD		00				0		1418	Europe/Andorra	1993-12-23
+3038829	Canal de la Vinya	Canal de la Vinya		42.51667	1.51667	H	STM	AD		00				0		1265	Europe/Andorra	1993-12-23
+3038830	Bosc de Villar	Bosc de Villar		42.6	1.55	V	FRST	AD		00				0		2298	Europe/Andorra	1993-12-23
+3038831	Torrent de Vila	Torrent de Vila		42.53333	1.56667	H	STM	AD		00				0		1418	Europe/Andorra	1993-12-23
+3038832	Vila	Vila	Casas Vila,Vila	42.53222	1.57392	P	PPL	AD		03				0		1418	Europe/Andorra	2011-06-06
+3038833	Basers de Vicenç	Basers de Vicenc		42.48333	1.48333	T	CLF	AD		00				0		981	Europe/Andorra	1993-12-23
+3038834	Pla de Viàs	Pla de Vias		42.58333	1.66667	T	UPLD	AD		00				0		2159	Europe/Andorra	1993-12-23
+3038835	Vial del Cardaire	Vial del Cardaire		42.56667	1.5	L	LCTY	AD		00				0		1636	Europe/Andorra	1993-12-23
+3038836	Font del Vi	Font del Vi		42.51667	1.48333	H	SPNG	AD		00				0		1839	Europe/Andorra	1993-12-23
+3038837	Font Verda	Font Verda		42.55	1.56667	H	SPNG	AD		00				0		1828	Europe/Andorra	1993-12-23
+3038838	Costa Verda	Costa Verda		42.48333	1.66667	T	SLP	AD		00				0		2524	Europe/Andorra	1993-12-23
+3038839	Costa Verda	Costa Verda		42.48333	1.56667	T	SLP	AD		00				0		2231	Europe/Andorra	1993-12-23
+3038840	Serrat de Ventader	Serrat de Ventader		42.48333	1.43333	T	MT	AD		00				0		1938	Europe/Andorra	1993-12-23
+3038841	Bony de Vellatocina	Bony de Vellatocina		42.61667	1.5	T	PK	AD		00				0		2390	Europe/Andorra	1993-12-23
+3038842	Pleta Vella	Pleta Vella		42.51667	1.61667	L	GRAZ	AD		00				0		2254	Europe/Andorra	1993-12-23
+3038843	Solà Vell	Sola Vell		42.46667	1.48333	T	SLP	AD		00				0		1134	Europe/Andorra	1993-12-23
+3038844	Port Vell	Port Vell		42.65	1.55	T	PASS	AD		00				0		2181	Europe/Andorra	1993-12-23
+3038845	Port Negre del Pallars	Port Negre del Pallars	Port Negre del Pallars,Port Vell	42.56667	1.45	T	PASS	AD		00				0		2137	Europe/Andorra	2011-06-06
+3038846	Bancal Vedeller	Bancal Vedeller		42.6	1.46667	R	TRL	AD		00				0		2421	Europe/Andorra	1993-12-23
+3038847	Vedat del Xeig	Vedat del Xeig		42.56667	1.48333	L	LCTY	AD		00				0		1508	Europe/Andorra	1993-12-23
+3038848	Vedat dels Plans	Vedat dels Plans		42.53333	1.5	A	ADMD	AD		00				0		1357	Europe/Andorra	1993-12-23
+3038849	Vedat de Coll de les Cases	Vedat de Coll de les Cases		42.56667	1.5	L	LCTY	AD		00				0		1636	Europe/Andorra	1993-12-23
+3038850	Serra del Vedat	Serra del Vedat		42.46667	1.48333	T	RDGE	AD		00				0		1134	Europe/Andorra	1993-12-23
+3038851	Planades del Vedat	Planades del Vedat		42.53333	1.5	T	UPLD	AD		00				0		1357	Europe/Andorra	1993-12-23
+3038852	Veda de Sorteny	Veda de Sorteny		42.61667	1.55	L	LCTY	AD		00				0		2007	Europe/Andorra	1993-12-23
+3038853	Veda del Castellar	Veda del Castellar		42.63333	1.51667	A	ADMD	AD		00				0		1894	Europe/Andorra	1993-12-23
+3038854	Canal de les Veces	Canal de les Veces		42.51667	1.51667	H	STM	AD		00				0		1265	Europe/Andorra	1993-12-23
+3038855	Coma de Varilles	Coma de Varilles		42.63333	1.53333	T	VAL	AD		00				0		2072	Europe/Andorra	1993-12-23
+3038856	Portella de les Vaques	Portella de les Vaques		42.56667	1.45	T	PASS	AD		00				0		2137	Europe/Andorra	1993-12-23
+3038857	Pas de les Vaques	Pas de les Vaques		42.58333	1.7	T	PASS	AD		00				0		2584	Europe/Andorra	1993-12-23
+3038858	Collada de les Vaques	Collada de les Vaques		42.56667	1.56667	T	PASS	AD		00				0		2089	Europe/Andorra	1993-12-23
+3038859	Roc del Vaquer	Roc del Vaquer		42.63333	1.48333	T	CLF	AD		00				0		2283	Europe/Andorra	1993-12-23
+3038860	Valls de la Coma	Valls de la Coma		42.6	1.63333	L	LCTY	AD		00				0		1893	Europe/Andorra	1993-12-23
+3038861	Vall d'Incles	Vall d'Incles		42.58386	1.66331	L	LCTY	AD		02				0		1867	Europe/Andorra	2010-01-11
+3038862	Vall de Soldeu	Vall de Soldeu		42.55	1.68333	L	LCTY	AD		00				0		2254	Europe/Andorra	1993-12-23
+3038863	Riu de la Vall del Riu	Riu de la Vall del Riu		42.56667	1.61667	H	STM	AD		00				0		1920	Europe/Andorra	1993-12-23
+3038864	Estany Gran de la Vall del Riu	Estany Gran de la Vall del Riu		42.601	1.59368	H	LK	AD		00				0		2467	Europe/Andorra	2011-04-19
+3038865	Cascada de la Vall del Riu	Cascada de la Vall del Riu		42.56667	1.61667	H	FLLS	AD		00				0		1920	Europe/Andorra	1993-12-23
+3038866	Canals de la Vall del Riu	Canals de la Vall del Riu		42.58333	1.6	H	RVN	AD		00				0		1828	Europe/Andorra	1993-12-23
+3038867	Camí de la Vall del Riu	Cami de la Vall del Riu		42.58333	1.61667	R	TRL	AD		00				0		1707	Europe/Andorra	1993-12-23
+3038868	Bosc de la Vall del Riu	Bosc de la Vall del Riu		42.58333	1.61667	V	FRST	AD		00				0		1707	Europe/Andorra	1993-12-23
+3038869	Vall del Riu	Vall del Riu		42.6	1.6	A	ADMD	AD		00				0		2143	Europe/Andorra	1993-12-23
+3038870	Coll de Vall Civera	Coll de Vall Civera	Coll de Valcibera,Coll de Vall Civera,Collado de Vall-Civera,Port de Vall Civera	42.48333	1.66667	T	PASS	AD		00				0		2524	Europe/Andorra	2011-06-06
+3038871	Obac de la Vall	Obac de la Vall		42.46667	1.5	T	SLP	AD		00				0		1383	Europe/Andorra	1993-12-23
+3038872	Riu Valira d’Orient	Riu Valira d'Orient	Rio Balira del Orien,Riu Valira d'Orient,Riu Valira d’Orient,Río Balira del Orien	42.51667	1.53333	H	STM	AD		00				0		1460	Europe/Andorra	2011-06-06
+3038873	Riu Valira del Nord	Riu Valira del Nord	Riu Valira d'Ordino,Riu Valira del Nord,Riu Valira del Nort,Riu Valira d’Ordino,Valira del Nord,Valira del Norte	42.34645	1.44271	H	STM	AD		00				0		682	Europe/Andorra	2011-06-06
+3038874	Estanys de la Val del Riu	Estanys de la Val del Riu		42.60138	1.59418	H	LKS	AD		00				0		2467	Europe/Andorra	2011-04-19
+3038875	Vaca Morta	Vaca Morta		42.56667	1.76667	L	LCTY	AD		00				0		1674	Europe/Andorra	1993-12-23
+3038876	Riu d’ Urina	Riu d' Urina		42.56667	1.58333	H	STM	AD		00				0		1919	Europe/Andorra	1993-12-23
+3038877	Serrat de la Uïna	Serrat de la Uina		42.56667	1.51667	T	RDGE	AD		00				0		1500	Europe/Andorra	1993-12-23
+3038878	Obaga de la Tuta	Obaga de la Tuta		42.48333	1.45	T	SLP	AD		00				0		1195	Europe/Andorra	1993-12-23
+3038879	Cova de la Tuta	Cova de la Tuta		42.48333	1.45	S	CAVE	AD		00				0		1195	Europe/Andorra	1993-12-23
+3038880	Roca del Tut	Roca del Tut		42.55	1.46667	T	RK	AD		00				0		1585	Europe/Andorra	1993-12-23
+3038881	Coll de Turer	Coll de Turer		42.56667	1.46667	T	PK	AD		00				0		1673	Europe/Andorra	1993-12-23
+3038882	Font del Tudó	Font del Tudo		42.43333	1.53333	H	SPNG	AD		00				0		2108	Europe/Andorra	1993-12-23
+3038883	Estany de les Truites	Estany de les Truites		42.58333	1.45	H	LK	AD		00				0		2156	Europe/Andorra	1993-12-23
+3038884	Serra de Tristaina	Serra de Tristaina	Serra de Tristaina	42.65	1.48333	T	RDGE	AD		00				0		2341	Europe/Andorra	2011-06-06
+3038885	Riu de Tristaina	Riu de Tristaina		42.61667	1.55	H	STM	AD		00				0		2007	Europe/Andorra	1993-12-23
+3038886	Pic de Tristaina	Pic de Tristaina	Pic de Triatagne,Pic de Tristagne,Pic de Tristaina,Pic des Tri-Stagnes,Tristaina	42.65265	1.49242	T	PK	AD	AD,FR	00				0		2384	Europe/Andorra	2007-04-29
+3038887	Clot de Tres Torrents	Clot de Tres Torrents		42.53333	1.53333	H	RVN	AD		00				0		1521	Europe/Andorra	1993-12-23
+3038888	Bony de Tres Corts	Bony de Tres Corts		42.53333	1.53333	T	SPUR	AD		00				0		1521	Europe/Andorra	1993-12-23
+3038889	Canal dels Trèmols	Canal dels Tremols		42.5	1.48333	H	STM	AD		00				0		1316	Europe/Andorra	1993-12-23
+3038890	Travenc	Travenc		42.6	1.68333	L	LCTY	AD		00				0		2089	Europe/Andorra	1993-12-23
+3038891	Pleta de la Trava	Pleta de la Trava		42.48333	1.61667	L	GRAZ	AD		00				0		2217	Europe/Andorra	1993-12-23
+3038892	Coll de la Trava	Coll de la Trava		42.48333	1.46667	T	SPUR	AD		00				0		1148	Europe/Andorra	1993-12-23
+3038893	Canal de la Trava	Canal de la Trava		42.56667	1.53333	H	RVN	AD		00				0		1669	Europe/Andorra	1993-12-23
+3038894	Bosc de la Trava	Bosc de la Trava		42.48333	1.63333	V	FRST	AD		00				0		2296	Europe/Andorra	1993-12-23
+3038895	Font dels Traginers	Font dels Traginers		42.43333	1.51667	H	SPNG	AD		00				0		2031	Europe/Andorra	1993-12-23
+3038896	Pla de les Toves	Pla de les Toves		42.46667	1.45	T	UPLD	AD		00				0		1562	Europe/Andorra	1993-12-23
+3038897	Torrent del Tossalroi	Torrent del Tossalroi		42.46667	1.51667	H	STM	AD		00				0		1985	Europe/Andorra	1993-12-23
+3038898	Tossal Gran	Tossal Gran		42.48333	1.48333	L	LCTY	AD		00				0		981	Europe/Andorra	1993-12-23
+3038899	Tossalet i Vinyals	Tossalet i Vinyals		42.48333	1.48333	L	LCTY	AD		00				0		981	Europe/Andorra	1993-12-23
+3038900	Bosc del Tossal de les Poselles	Bosc del Tossal de les Poselles		42.53333	1.5	V	FRST	AD		00				0		1357	Europe/Andorra	1993-12-23
+3038901	Tossal	Tossal		42.46667	1.48333	L	LCTY	AD		00				0		1134	Europe/Andorra	1993-12-23
+3038902	Tosquers	Tosquers		42.56667	1.48333	T	SLP	AD		00				0		1508	Europe/Andorra	1993-12-23
+3038903	Canal del Tosquer	Canal del Tosquer		42.56667	1.51667	H	STM	AD		00				0		1500	Europe/Andorra	1993-12-23
+3038904	Bosc del Tosquer	Bosc del Tosquer		42.56667	1.53333	V	FRST	AD		00				0		1669	Europe/Andorra	1993-12-23
+3038905	Bosc del Tosquer	Bosc del Tosquer		42.53333	1.6	V	FRST	AD		00				0		1888	Europe/Andorra	1993-12-23
+3038906	Bosc de la Tosca	Bosc de la Tosca		42.43333	1.45	V	FRST	AD		00				0		877	Europe/Andorra	1993-12-23
+3038907	Tosa d’Incles	Tosa d'Incles		42.58333	1.68333	A	ADMD	AD		00				0		2294	Europe/Andorra	1993-12-23
+3038908	Cap de Tosa d’Entor	Cap de Tosa d'Entor		42.6	1.65	T	PK	AD		00				0		2131	Europe/Andorra	1993-12-23
+3038909	Tosa de les Mussoles	Tosa de les Mussoles		42.61667	1.68333	L	LCTY	AD		00				0		2406	Europe/Andorra	1993-12-23
+3038910	Pic de la Tosa de Juclar	Pic de la Tosa de Juclar		42.6	1.71667	T	PK	AD		00				0		2516	Europe/Andorra	1993-12-23
+3038911	Collada de la Tosa de Caraup	Collada de la Tosa de Caraup		42.6	1.65	T	SPUR	AD		00				0		2131	Europe/Andorra	1993-12-23
+3038912	Planell de la Tosa	Planell de la Tosa		42.53333	1.45	T	UPLD	AD		00				0		2130	Europe/Andorra	1993-12-23
+3038913	Canals de la Tosa	Canals de la Tosa		42.58333	1.7	H	RVN	AD		00				0		2584	Europe/Andorra	1993-12-23

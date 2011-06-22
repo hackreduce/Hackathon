@@ -83,16 +83,7 @@ Note: The jobs are made for the specific datasets, so pairing them up properly i
 Datasets
 --------
 
-* Bixi (Courtesy of Fabrice)
-* Flights (Courtesy of Hopper)
-* NASDAQ daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nasdaq-exchange)
-* NYSE daily prices and dividends (http://www.infochimps.com/datasets/daily-1970-2010-open-close-hi-low-and-volume-nyse-exchange)
-* Wikipedia XML (http://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia)
-* Google Ngram (http://ngrams.googlelabs.com/datasets)
-* DNS "com" tld root file containing name and associated nameserver
-* LDEO Surface Ocean CO2 Climatology data (http://www.pmel.noaa.gov/co2/story/LDEO+Surface+Ocean+CO2+Climatology)
-* Twitter data of social graph, user id to names, and celebrity profiles. This does not contain actual tweets because of Twitter policies (http://an.kaist.ac.kr/traces/WWW2010.html)
-* Million Song Dataset (http://labrosa.ee.columbia.edu/millionsong/pages/getting-dataset) **Special thanks to Echo Nest for converting the whole 200+ GB HDF5 format of the dataset to TSV for us**
+https://github.com/hoppertravel/HackReduce/wiki/Datasets
 
 Take a look at the datasets/ folder to see samples subsets of these datasets.
 
