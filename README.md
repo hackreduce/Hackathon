@@ -13,6 +13,14 @@ Prerequisites
 * Git
 
 
+Datasets
+--------
+
+https://github.com/hoppertravel/HackReduce/wiki/Datasets
+
+Take a look at the datasets/ folder to see samples subsets of these datasets.
+
+
 Run an example job locally
 --------------------------
 
@@ -80,12 +88,16 @@ Run any of the following commands in your CLI, and after the job's completed, ch
 Note: The jobs are made for the specific datasets, so pairing them up properly is important. The second argument (/tmp/*) is just a made up output path for the results of the job, and can be modified to anything you want.
 
 
-Datasets
---------
+Streaming example
+-----------------
 
-https://github.com/hoppertravel/HackReduce/wiki/Datasets
+* Python
 
-Take a look at the datasets/ folder to see samples subsets of these datasets.
+    $ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/py_streaming_count -mapper streaming/nasdaq_counter.py -reducer aggregate
+
+* Ruby
+
+    $ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/rb_streaming_count -mapper streaming/nasdaq_counter.rb -reducer aggregate
 
 
 Running on a Hadoop cluster
