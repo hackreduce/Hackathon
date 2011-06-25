@@ -3,6 +3,14 @@ HackReduce
 
 http://www.hackreduce.org
 
+**This README provides information on how to work with the Java project code and do local development. When you've written your jobs and are ready to execute it on the cluster, please read the [Event Information wiki page](https://github.com/hoppertravel/HackReduce/wiki) and also the [Hadoop Streaming](https://github.com/hoppertravel/HackReduce/wiki/Hadoop-Streaming) page if you're using streaming.**
+
+
+Wiki
+----
+
+https://github.com/hoppertravel/HackReduce/wiki
+
 
 Prerequisites
 -------------
@@ -100,16 +108,6 @@ Streaming example
         $ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/rb_streaming_count -mapper streaming/nasdaq_counter.rb -reducer aggregate
 
 `-reducer aggregate` is a built-in function for streaming.
-
-Running on a Hadoop cluster
----------------------------
-If you'd like to set up an actual Hadoop cluster (single or multi node), then follow the instructions on the Hadoop wiki: http://wiki.apache.org/hadoop/QuickStart
-
-If you're running the HackReduce virtual image, or you're trying to run the example job against an actual install of Hadoop, the process should be similar. However, you'll need to upload the datasets folder into HDFS (if you're running it), or just make a note of the path.
-
-Example:
-
-    $ bin/hadoop jar <path_to_hackreduce_jar>/HackReduce-0.2.jar org.hackreduce.examples.stockexchange.RecordCounter <path to>/datasets/nyse/daily_prices /tmp/nyse_recordcounts
 
 
 Setting up for development
