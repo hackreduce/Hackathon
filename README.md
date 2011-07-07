@@ -3,12 +3,13 @@ HackReduce
 
 This repository and the accompanying wiki include all the material needed for Hack/Reduce events. It's also a great place to start learning about Hadoop and Map/Reduce. 
 http://www.hackreduce.org
+----
 
 ***There are two parts of information for Hack/Reduce and for Learning Hadoop and Mapreduce on the git repo and github page:***
 
-**1. This README provides information on how to work with the Java project code in this repository and do local development.**
+1. This README provides information on how to work with the Java project code in this repository and do local development.
 
-**2. The wiki on https://github.com/hoppertravel/HackReduce/wiki has more general material and event-specific instructions:**
+2. The wiki on https://github.com/hoppertravel/HackReduce/wiki has more general material and event-specific instructions:
     
     1. A presentation introducing Mapreduce
     
