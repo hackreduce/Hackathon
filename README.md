@@ -4,23 +4,23 @@ HackReduce
 This repository and the accompanying wiki include all the material needed for Hack/Reduce events. It's also a great place to start learning about Hadoop and Map/Reduce. 
 http://www.hackreduce.org
 
-**There are two parts of information about Hack/Reduce and Hadoop Map/Reduce.**:
+***There are two parts of useful information for Hack/Reduce and for Learning Hadoop and Mapreduce:***
 
-1. This README provides information on how to work with the Java project code in this repository and do local development.
+**1. This README provides information on how to work with the Java project code in this repository and do local development.**
 
-2. The wiki has more general material and event-specific instructions:
+**2. The wiki has more general material and event-specific instructions:**
     
-    2.1. A presentation introducing Mapreduce
+    1. A presentation introducing Mapreduce
     
-    2.2. Event specific Cluster Setup and information on how to run your jobs
+    2. Event specific Cluster Setup and information on how to run your jobs
     
-    2.3. List of datasets available on the clusters
+    3. List of datasets available on the clusters
     
-    2.4. Instructions for using Hadoop Streaming
+    4. Instructions for using Hadoop Streaming
     
-    2.5. Instructions for Windows users
+    5. Instructions for Windows users
     
-    2.6. Links to code from previous Hack/Reduce projects
+    6. Links to code from previous Hack/Reduce projects
 
 
 Wiki
