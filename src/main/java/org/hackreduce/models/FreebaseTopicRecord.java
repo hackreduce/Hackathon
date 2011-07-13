@@ -7,6 +7,17 @@ import java.util.logging.Logger;
 
 import org.apache.hadoop.io.Text;
 
+/**
+ * Record for a topic from the Freebase topic dump.
+ * Each line in the file represents a single topic as described here:
+ * http://wiki.freebase.com/wiki/Data_dumps#Simple_Topic_Dump
+ * <p>
+ * The dumps themselves are available from: <ul>
+ * <li>http://aws.amazon.com/datasets/8247878934976180</li>
+ * 
+ * @author Tom Morris <tfmorris@gmail.com>
+ * 
+ */
 public class FreebaseTopicRecord {
 
 	Logger LOG = Logger.getLogger(FreebaseTopicRecord.class.getName());
@@ -19,6 +30,24 @@ public class FreebaseTopicRecord {
 	private String blurb;
 	
 
+	/**
+	 * Construct a FreebaseTopicRecord object from a single line of text
+	 * as read from the simple topic dump.
+	 * 
+	 * @param text the line of text 
+	 * @throws IllegalArgumentException
+	 */
+	public FreebaseTopicRecord(Text text) throws IllegalArgumentException {
+		this(text.toString());
+	}
+	
+	/**
+	 * Construct a FreebaseTopicRecord object from a single line of text
+	 * as read from the simple topic dump.
+	 * 
+	 * @param string the line of text 
+	 * @throws IllegalArgumentException
+	 */
 	public FreebaseTopicRecord(String string) throws IllegalArgumentException {
 		String[] pieces = string.split("\t");
 		mid = pieces[0];
@@ -30,49 +59,79 @@ public class FreebaseTopicRecord {
 	}
 
 	private static String unescape(String s) {
+		// \\N is a special signal value representing a null value
 		if ("\\N".equals(s)) {
 			return null;
 		}
+		// tabs and newlines are the only other escaped characters
 		return s.replaceAll("\\t","\t").replaceAll("\\n","\n");
 	}
 
+	// Split a comma separated string of ids
 	private static String[] split(String s) {
 		if ("\\N".equals(s)) {
 			return new String[0];
 		}
-		// TODO: Do we need to escape these ?  Probably not
-//		s = s.replaceAll("\\t","\t").replaceAll("\\n","\n");
 		return s.split(",");
 	}
+
+
+	/**
+	 * @return the primary id (MID) of the Freebase topic which this
+	 * record represents.
+	 */
+	public String getMid() {
+    	return mid;
+    }
 	
-	public FreebaseTopicRecord(Text text) throws IllegalArgumentException {
-		this(text.toString());
-	}
-	
+	/**
+	 * @return the primary name of the Freebase topic
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @return an array of Freebase IDs
+	 */
 	public String[] getIds() {
 		return ids;
 	}
 
 
+	/**
+	 * @return An array of numeric Wikipedia article ids as strings
+	 */
 	public String[] getWp_ids() {
 		return wp_ids;
 	}
 
 
+	/**
+	 * @return an array of Freebase type ids representing all the types
+	 * which have been applied to this topic
+	 */
 	public String[] getFb_types() {
 		return fb_types;
 	}
 
 
+	/**
+	 * @return A short textual description of the topic.  For Wikipedia,
+	 * derived topics, this is typically the first paragraph or so of the
+	 * Wikipedia article.  As such, it falls under the Wikipedia license,
+	 * not the Freebase license.
+	 */
 	public String getBlurb() {
 		return blurb;
 	}
 
 
+	/**
+	 * Format the record into a string in the same format as the input.
+	 * 
+	 * @return a String representing the line of text
+	 */
 	public String toTSV() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append(getName()).append('\t');
@@ -106,10 +165,6 @@ public class FreebaseTopicRecord {
 		}
 		return buffer.toString();
 	}
-
-	public String getMid() {
-    	return mid;
-    }
 
 
 }
