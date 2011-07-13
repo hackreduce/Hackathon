@@ -96,6 +96,11 @@ Run any of the following commands in your CLI, and after the job's completed, ch
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.flights.RecordCounter datasets/flights /tmp/flights_recordcounts
 
+**Freebase:**
+
+    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.freebase.TopicCounter datasets/freebase/topics /tmp/fb_topiccounts
+    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.freebase.QuadCounter datasets/freebase/quadruples /tmp/fb_quadcounts
+
 **Wikipedia:**
 
     $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
