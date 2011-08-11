@@ -12,7 +12,7 @@ public class TwoGram extends Gram {
         super(inputString);
         String[] grams = getLineElements()[0].split(" ");
         setGram1(grams[0]);
-        setGram2(grams[1]);
+        setGram2(grams.length == 1 ? "" : grams[1]);
     }
 
     public TwoGram(Text inputText) {
