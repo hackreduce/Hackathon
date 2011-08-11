@@ -10,8 +10,9 @@ public class TwoGram extends Gram {
 
     public TwoGram(String inputString) {
         super(inputString);
-        setGram1(getLineElements()[0]);
-        setGram2(getLineElements()[1]);
+        String[] grams = getLineElements()[0].split(" ");
+        setGram1(grams[0]);
+        setGram2(grams[1]);
     }
 
     public TwoGram(Text inputText) {
