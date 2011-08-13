@@ -102,11 +102,11 @@ Run any of the following commands in your CLI, and after the job's completed, ch
 
 **Google 1gram:**
 
-    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.one_gram.RecordCounter datasets/ngram/1gram /tmp/1gram_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.one_gram.RecordCounter datasets/ngrams/1gram /tmp/1gram_recordcounts
 
 **Google 2gram:**
 
-    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.two_gram.RecordCounter datasets/ngram/2gram /tmp/2gram_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.2.jar:lib/*" org.hackreduce.examples.ngram.two_gram.RecordCounter datasets/ngrams/2gram /tmp/2gram_recordcounts
 
 **MSD:**
 
