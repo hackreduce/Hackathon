@@ -52,9 +52,10 @@ public class HackRecordCounter extends org.hackreduce.examples.RecordCounter {
 			//context.write(TOTAL_COUNT, ONE_COUNT);
 
 			// Count alliteration by returning early if not matching first letter
-			String g2 = record.getGram2();
-			if (g2 == null || g2.length() == 0) return;
 			String g1 = record.getGram1();
+			String g2 = record.getGram2();
+			if (g2 == null || g1.length() < 3 || g2.length() < 3) return;
+			if (!g1.matches("[a-zA-Z]+") || !g2.matches("[a-zA-Z]+")) return;
 			char c1 = g1.charAt(0);
 			char c2 = g2.charAt(0);
 			if (!Character.isLetter(c1) || !Character.isLetter(c2)) return;
