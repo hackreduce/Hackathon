@@ -10,7 +10,7 @@ http://www.hackreduce.org
 
 1. This README provides information on how to work with the Java project code in this repository and do local development.
 
-2. The wiki on https://github.com/hopper/HackReduce/wiki has more general material and event-specific instructions:
+2. The wiki on https://github.com/hackreduce/Hackathon/wiki has more general material and event-specific instructions:
     
     1. A presentation introducing Mapreduce
     
@@ -28,7 +28,7 @@ http://www.hackreduce.org
 Wiki
 ----
 
-https://github.com/hopper/HackReduce/wiki
+https://github.com/hackreduce/Hackathon/wiki
 
 
 Prerequisites
@@ -43,7 +43,7 @@ Prerequisites
 Datasets
 --------
 
-https://github.com/hopper/HackReduce/wiki/Datasets
+https://github.com/hackreduce/Hackathon/wiki/Datasets
 
 Take a look at the datasets/ folder to see samples subsets of these datasets.
 
@@ -51,10 +51,10 @@ Take a look at the datasets/ folder to see samples subsets of these datasets.
 Run an example job locally
 --------------------------
 
-1. `git clone git://github.com/hopper/HackReduce.git`
+1. `git clone git://github.com/hackreduce/Hackathon.git`
    (you should occasionally run "git pull" from within the project directory to update your code)
 
-2. `cd HackReduce`
+2. `cd Hackathon`
 
 3. Build the project depending on what tool you have installed:
 
