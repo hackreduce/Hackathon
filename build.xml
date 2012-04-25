@@ -21,7 +21,7 @@
          ================================= -->
     <target name="compile" depends="clean" description="--> compile the project">
         <mkdir dir="${classes.dir}" />
-        <javac srcdir="${src.dir}" destdir="${classes.dir}">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false">
           <classpath>
             <pathelement path="${classpath}"/>
             <fileset dir="${lib.dir}">

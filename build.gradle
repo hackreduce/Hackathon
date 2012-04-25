@@ -1,7 +1,7 @@
 version = '0.2'
 
 // Modify these values if you want to build against different versions of Hadoop
-hadoop_version = '0.20.2'
+project.ext.set("hadoop_version", "0.20.2")
 
 
 apply plugin: 'java'
@@ -37,17 +37,17 @@ def pomConfig = {
   description 'HackReduce related code'
   url 'http://hackreduce.org'
   organization {
-    name 'Hopper Travel'
-    url 'http://hopper.travel'
+    name 'Hopper'
+    url 'http://hopper.com'
   }
   issueManagement {
     system 'Github'
-    url 'https://github.com/hoppertravel/HackReduce/issues'
+    url 'https://github.com/hackreduce/Hackathon/issues'
   }
   scm {
-    url "https://github.com/hoppertravel/HackReduce"
-    connection "scm:git:http://github.com/hoppertravel/HackReduce.git"
-    developerConnection "scm:git:git@github.com:hoppertravel/HackReduce.git"
+    url "https://github.com/hackreduce/Hackathon"
+    connection "scm:git:http://github.com/hackreduce/Hackathon.git"
+    developerConnection "scm:git:git@github.com:hackreduce/Hackathon.git"
   }
   licenses {
     license {
@@ -59,9 +59,9 @@ def pomConfig = {
   developers {
     developer {
       id 'hopper-team'
-      name 'The Hopper Travel Team'
-      organization 'Hopper Travel'
-      organizationUrl 'http://hopper.travel'
+      name 'Hopper Team'
+      organization 'Hopper'
+      organizationUrl 'http://hopper.com'
     }
   }
 }

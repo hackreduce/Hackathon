@@ -33,11 +33,11 @@ https://github.com/hackreduce/Hackathon/wiki
 
 Prerequisites
 -------------
+* Git
 * Java 1.6
 * Build tool (can use either one):
     * Gradle (http://www.gradle.org/installation.html)
     * Ant
-* Git
 
 
 Datasets
@@ -68,7 +68,28 @@ Run an example job locally
 
         $ ant
 
-4. Try running an example from the list below
+4. Try running any of the **examples** from the section below
+
+
+Setting up for development
+--------------------------
+
+After downloading the source files, you can start working with them in your favourite IDE using one of these methods:
+
+### Gradle (recommended):
+
+We recommend using Gradle for easy set up of the project in Eclipse, Idea, or other IDEs through Gradle plugins (http://www.gradle.org/standard_plugins.html). To use it, simply run one of the following:
+
+    $ gradle eclipse
+
+    $ gradle idea
+
+Then import the project into your IDE of choice. This will download all of the dependencies (including sources) and create the necessary project files.
+
+
+### Manual setup:
+
+You can also bring in the project manually into your IDE and then include all the *.jar files from the **lib** folder of the project.
 
 
 Examples
@@ -127,23 +148,4 @@ Streaming example
         $ java -classpath ".:lib/*" org.apache.hadoop.streaming.HadoopStreaming -input datasets/nasdaq/daily_prices/ -output /tmp/rb_streaming_count -mapper streaming/nasdaq_counter.rb -reducer aggregate
 
 `-reducer aggregate` is a built-in function for streaming.
-
-
-Setting up for development
---------------------------
-
-### Gradle (recommended):
-
-We recommend using Gradle for easy set up of the project in Eclipse, Idea, or other IDEs through Gradle plugins (http://www.gradle.org/standard_plugins.html). To use it, simply run one of the following:
-
-    $ gradle eclipse
-
-    $ gradle idea
-
-Then import the project into your IDE of choice. This will download all of the dependencies (including sources) and create the necessary project files.
-
-
-### Manual setup:
-
-You can also bring in the project manually into your IDE and then include all the *.jar files from the **lib** folder of the project.
 
