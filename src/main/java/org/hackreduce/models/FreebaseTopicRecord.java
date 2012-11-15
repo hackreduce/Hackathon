@@ -13,7 +13,13 @@ import org.apache.hadoop.io.Text;
  * http://wiki.freebase.com/wiki/Data_dumps#Simple_Topic_Dump
  * <p>
  * The dumps themselves are available from: <ul>
- * <li>http://aws.amazon.com/datasets/8247878934976180</li>
+ * <li>http://download.freebase.com/datadumps/latest/freebase-simple-topic-dump.tsv.bz2 (updated weekly)</li>
+ * <li>http://aws.amazon.com/datasets/8247878934976180 (updated occasionally)</li>
+ * 
+ * The simple topic dump is 1.4 GB compressed and 5.4 GB uncompressed (November 2012).
+ * 
+ * Note that unless you are using Hadoop 0.23.x or 2.x the bzip2 codec isn't
+ * splittable, so you'll need to decompression the dump before processing.
  * 
  * @author Tom Morris <tfmorris@gmail.com>
  * 
@@ -59,12 +65,21 @@ public class FreebaseTopicRecord {
 	}
 
 	private static String unescape(String s) {
-		// \\N is a special signal value representing a null value
+		// \\N is a special signal value representing a null
 		if ("\\N".equals(s)) {
 			return null;
 		}
-		// tabs and newlines are the only other escaped characters
-		return s.replaceAll("\\t","\t").replaceAll("\\n","\n");
+		// tabs, newlines, and backslashes are the only other escaped characters
+		return s.replaceAll("\\t","\t").replaceAll("\\n","\n").replaceAll("\\\\", "\\");
+	}
+
+	private static String escape(String s) {
+		// \\N is a special signal value representing a null
+		if (s == null) {
+			return "\\N";
+		}
+		// Escape tabs, newlines, and backslashes
+		return s.replaceAll("\\","\\\\").replaceAll("\t","\\t").replaceAll("\n","\\n");
 	}
 
 	// Split a comma separated string of ids
@@ -117,7 +132,7 @@ public class FreebaseTopicRecord {
 
 
 	/**
-	 * @return A short textual description of the topic.  For Wikipedia,
+	 * @return A short textual description of the topic.  For Wikipedia-
 	 * derived topics, this is typically the first paragraph or so of the
 	 * Wikipedia article.  As such, it falls under the Wikipedia license,
 	 * not the Freebase license.
@@ -134,11 +149,12 @@ public class FreebaseTopicRecord {
 	 */
 	public String toTSV() {
 		StringBuffer buffer = new StringBuffer();
+		buffer.append(getMid()).append('\t');
 		buffer.append(getName()).append('\t');
 		buffer.append(toCSV(getIds())).append('\t');
 		buffer.append(toCSV(getWp_ids())).append('\t');
 		buffer.append(toCSV(getFb_types())).append('\t');
-		buffer.append(getBlurb()).append('\t');
+		buffer.append(escape(getBlurb())).append('\t');
 		return buffer.toString();
 	}	
 
