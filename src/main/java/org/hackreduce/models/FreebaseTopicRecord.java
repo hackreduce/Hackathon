@@ -65,7 +65,7 @@ public class FreebaseTopicRecord {
 	}
 
 	private static String unescape(String s) {
-		// \\N is a special signal value representing a null
+		// \N is a special signal value representing a null
 		if ("\\N".equals(s)) {
 			return null;
 		}
@@ -74,7 +74,7 @@ public class FreebaseTopicRecord {
 	}
 
 	private static String escape(String s) {
-		// \\N is a special signal value representing a null
+		// \N is a special signal value representing a null
 		if (s == null) {
 			return "\\N";
 		}
