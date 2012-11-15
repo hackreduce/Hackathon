@@ -19,9 +19,9 @@ import org.hackreduce.models.FreebaseQuadRecord;
 
 
 /**
- * This MapReduce job will count the total number of assertions in the Freebase
- * quad dump.
- * 
+ * This MapReduce job will count the total number of assertions for each
+ * property in the Freebase quad dump as well as the number of quads with 
+ * each of the different destination value types (e.g. key, another object, etc)
  */
 public class QuadCounter extends org.hackreduce.examples.RecordCounter {
 
@@ -32,10 +32,6 @@ public class QuadCounter extends org.hackreduce.examples.RecordCounter {
 
 	public static class RecordCounterMapper extends FreebaseQuadMapper<Text, LongWritable> {
 
-		// Our own made up key to send all counts to a single Reducer, so we can
-		// aggregate a total value.
-		public static final Text TOTAL_COUNT = new Text("total");
-
 		// Just to save on object instantiation
 		public static final LongWritable ONE_COUNT = new LongWritable(1);
 
@@ -44,7 +40,8 @@ public class QuadCounter extends org.hackreduce.examples.RecordCounter {
 				InterruptedException {
 
 			context.getCounter(Count.TOTAL_RECORDS).increment(1);
-			context.write(TOTAL_COUNT, ONE_COUNT);
+			context.write(new Text(record.getProperty()), ONE_COUNT);
+			context.write(new Text(record.getType().toString()), ONE_COUNT);
 		}
 
 	}

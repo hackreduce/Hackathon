@@ -29,10 +29,6 @@ public class TopicCounter extends org.hackreduce.examples.RecordCounter {
 
 	public static class RecordCounterMapper extends FreebaseTopicMapper<Text, LongWritable> {
 
-		// Our own made up key to send all counts to a single Reducer, so we can
-		// aggregate a total value.
-		public static final Text TOTAL_COUNT = new Text("total");
-
 		// Just to save on object instantiation
 		public static final LongWritable ONE_COUNT = new LongWritable(1);
 
@@ -40,10 +36,12 @@ public class TopicCounter extends org.hackreduce.examples.RecordCounter {
 		protected void map(FreebaseTopicRecord record, Context context) throws IOException,
 				InterruptedException {
 
-			context.getCounter(Count.TOTAL_RECORDS).increment(1);
-			context.write(TOTAL_COUNT, ONE_COUNT);
+			context.getCounter(Count.TOTAL_RECORDS).increment(1); 
+			// Emit a record for each type the topic has
+			for (String t : record.getFb_types()) {
+				context.write(new Text(t), ONE_COUNT);				
+			}
 		}
-
 	}
 
 	@Override
