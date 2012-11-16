@@ -1,4 +1,4 @@
-Hackathon
+HackReduce
 ==========
 
 This repository and the accompanying wiki include all the material needed for Hack/Reduce events. It's also a great place to start learning about Hadoop and Map/Reduce. 
