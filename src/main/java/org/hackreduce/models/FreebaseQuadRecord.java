@@ -34,6 +34,11 @@ public class FreebaseQuadRecord {
 	private String namespace;
 	private Type type;
 
+
+	public FreebaseQuadRecord(Text text) throws IllegalArgumentException {
+		this(text.toString());
+	}
+	
 	public FreebaseQuadRecord(String string) throws IllegalArgumentException {
 		String[] pieces = string.split("\t");
 		source = pieces[0]; // MID of source object in Freebase
@@ -51,6 +56,8 @@ public class FreebaseQuadRecord {
 						value = unescape(value);
 						type = Type.TEXT;
 					} else {
+						// unescape to more natural form (but requires re-escaping to use with Freebase)
+						value = unescape_key(value);
 						type = Type.KEY;
 					}
 				} else {
@@ -68,6 +75,7 @@ public class FreebaseQuadRecord {
 		}
 
 	}
+	
 	private static String unescape(String s) {
 		// \N is a special signal value representing a null
 		if ("\\N".equals(s)) {  // Not used in quad dump?
@@ -76,6 +84,7 @@ public class FreebaseQuadRecord {
 		// tabs, newlines, and backslashes are the only other escaped characters
 		return s.replaceAll("\\t","\t").replaceAll("\\n","\n").replaceAll("\\\\", "\\");
 	}
+	
 
 	private static String escape(String s) {
 		if (s == null) {
@@ -85,9 +94,28 @@ public class FreebaseQuadRecord {
 		return s.replaceAll("\t","\\t").replaceAll("\n","\\n").replaceAll("\\", "\\\\");
 	}
 
-
-	public FreebaseQuadRecord(Text text) throws IllegalArgumentException {
-		this(text.toString());
+	/**
+	 * Undo MQL key escaping as described in::
+	 * http://wiki.freebase.com/wiki/MQL_key_escaping
+	 * 
+	 * @param s
+	 * @return
+	 */
+	private String unescape_key(String s) {
+		String[] part = s.split("$");
+		StringBuffer sb = new StringBuffer(part[0]);
+		for (int i = 1; i<part.length; i++) {
+			try {
+				int code = Integer.parseInt(part[i].substring(0, 4), 16);
+				sb.appendCodePoint(code).append(part[i].substring(4));
+			} catch (IndexOutOfBoundsException e) {
+				LOG.warning("Unabled to unescape key value " + s);
+				sb.append(part[i]);
+			} catch (NumberFormatException e) {
+				sb.append(part[i]);
+			}
+		}
+		return sb.toString();
 	}
 
 	public String getSource() {
