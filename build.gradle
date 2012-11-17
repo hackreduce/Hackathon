@@ -28,6 +28,10 @@ repositories {
   mavenCentral()
 }
 
+configurations {
+  all*.exclude group: 'com.cloudera.cdh', module: 'hadoop-ant'
+}
+
 dependencies {
   compile 'org.apache.hadoop:hadoop-core:' + hadoop_version
   compile 'org.apache.hadoop:hadoop-streaming:' + hadoop_version
