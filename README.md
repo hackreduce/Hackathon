@@ -99,39 +99,39 @@ Run any of the following commands in your CLI, and after the job's completed, ch
 
 **Bixi:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.bixi.RecordCounter datasets/bixi /tmp/bixi_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.bixi.RecordCounter datasets/bixi /tmp/bixi_recordcounts
 
 **NASDAQ:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nasdaq/dividends /tmp/nasdaq_dividends
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nasdaq/daily_prices /tmp/nasdaq_marketcaps
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nasdaq/daily_prices /tmp/nasdaq_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nasdaq/dividends /tmp/nasdaq_dividends
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nasdaq/daily_prices /tmp/nasdaq_marketcaps
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nasdaq/daily_prices /tmp/nasdaq_recordcounts
 
 **NYSE:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nyse/dividends /tmp/nyse_dividends
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nyse/daily_prices /tmp/nyse_marketcaps
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nyse/daily_prices /tmp/nyse_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.stockexchange.HighestDividend datasets/nyse/dividends /tmp/nyse_dividends
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.stockexchange.MarketCapitalization datasets/nyse/daily_prices /tmp/nyse_marketcaps
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.stockexchange.RecordCounter datasets/nyse/daily_prices /tmp/nyse_recordcounts
 
 **Flights:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.flights.RecordCounter datasets/flights /tmp/flights_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.flights.RecordCounter datasets/flights /tmp/flights_recordcounts
 
 **Wikipedia:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.wikipedia.RecordCounter datasets/wikipedia /tmp/wikipedia_recordcounts
 
 **Google 1gram:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.ngram.one_gram.RecordCounter datasets/ngrams/1gram /tmp/1gram_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.ngram.one_gram.RecordCounter datasets/ngrams/1gram /tmp/1gram_recordcounts
 
 **Google 2gram:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.ngram.two_gram.RecordCounter datasets/ngrams/2gram /tmp/2gram_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.ngram.two_gram.RecordCounter datasets/ngrams/2gram /tmp/2gram_recordcounts
 
 **MSD:**
 
-    $ java -classpath ".:build/libs/Hackathon-0.2.jar:lib/*" org.hackreduce.examples.msd.RecordCounter datasets/msd /tmp/msd_recordcounts
+    $ java -classpath ".:build/libs/HackReduce-0.3.jar:lib/*" org.hackreduce.examples.msd.RecordCounter datasets/msd /tmp/msd_recordcounts
 
 Note: The jobs are made for the specific datasets, so pairing them up properly is important. The second argument (/tmp/*) is just a made up output path for the results of the job, and can be modified to anything you want.
 
