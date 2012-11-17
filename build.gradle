@@ -1,7 +1,7 @@
-version = '0.2'
+version = '0.3'
 
 // Modify these values if you want to build against different versions of Hadoop
-project.ext.set("hadoop_version", "0.20.2")
+project.ext.set("hadoop_version", "0.20.2-cdh3u5")
 
 
 apply plugin: 'java'
@@ -22,6 +22,9 @@ jar {
 }
 
 repositories {
+  maven {
+    url "https://repository.cloudera.com/artifactory/cloudera-repos"
+  }
   mavenCentral()
 }
 
