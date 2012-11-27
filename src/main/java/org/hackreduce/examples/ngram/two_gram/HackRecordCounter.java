@@ -1,7 +1,6 @@
 package org.hackreduce.examples.ngram.two_gram;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.LongWritable;
