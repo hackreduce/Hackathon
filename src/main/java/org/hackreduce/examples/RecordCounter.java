@@ -17,7 +17,7 @@ import org.hackreduce.mappers.ModelMapper;
 
 
 /**
- * This MapReduce job will count the total number of Bixi records in the data dump.
+ * This MapReduce job will count the total number of records in an input file.
  *
  */
 public abstract class RecordCounter extends Configured implements Tool {
@@ -64,8 +64,6 @@ public abstract class RecordCounter extends Configured implements Tool {
         job.setMapperClass(getMapper());
 		job.setReducerClass(RecordCounterReducer.class);
 
-        configureJob(job);
-
 		// This is what the Mapper will be outputting to the Reducer
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(LongWritable.class);
@@ -73,6 +71,9 @@ public abstract class RecordCounter extends Configured implements Tool {
 		// This is what the Reducer will be outputting
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
+
+		// Do this last so subclass can override
+        configureJob(job);
 
 		// Setting the input folder of the job 
 		FileInputFormat.addInputPath(job, new Path(args[0]));
