@@ -28,11 +28,13 @@ public class StockExchangeRecord {
 	double stockPriceClose;
 	int stockVolume;
 	double stockPriceAdjClose;
+	String inputString;
 
 	public StockExchangeRecord(String inputString) throws IllegalArgumentException {
 		// CSV header (parsing the inputString is based on this):
 		// exchange, stock_symbol, date, stock_price_open, stock_price_high, stock_price_low,
 		// 		stock_price_close, stock_volume, stock_price_adj_close
+		this.inputString = inputString; // Store for later to write it back out
 		String[] attributes = inputString.split(",");
 
 		if (attributes.length != 9)
@@ -77,6 +79,10 @@ public class StockExchangeRecord {
 
 	public Date getDate() {
 		return date;
+	}
+	
+	public String getDateString() {
+		return sdf.format(date);
 	}
 
 	public void setDate(Date date) {
@@ -129,6 +135,10 @@ public class StockExchangeRecord {
 
 	public void setStockPriceAdjClose(double stockPriceAdjClose) {
 		this.stockPriceAdjClose = stockPriceAdjClose;
+	}
+	
+	public String toString() {
+		return this.inputString;
 	}
 
 }
